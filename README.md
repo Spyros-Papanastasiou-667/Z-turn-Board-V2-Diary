@@ -1,7 +1,7 @@
 ## Z-turn-Board-V2-Diary
 
-* Newbie friendly: VHDL + Vivado.
-* [Current] Goal: Linux + FPGA cooperation.
+* Beginner friendly: VHDL & Vivado.
+* [Current] Goal: Linux w/ FPGA cooperation.
 
 ## Programming "Hellow World!"
 
@@ -14,7 +14,7 @@
 ## References
 
 * Video
-* pdf
+* [Z-turn Board Tutorial Book](https://www.myirtech.com/soft.asp?id=969)
 * error: https://blog.csdn.net/yihuajack/article/details/120714268
 
 ## Go to: [Adding board](Adding_board.md)
