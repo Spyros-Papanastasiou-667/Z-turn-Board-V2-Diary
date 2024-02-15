@@ -7,6 +7,8 @@
 
 * [Getting started] Video seem to have moved to [FPGA Developer](https://www.youtube.com/watch?v=fVrcUiYxe7M)
 
+* default platform clock (chinese: https://blog.csdn.net/yihuajack/article/details/120714268)
+
 ## Notes
 
 * IO-planner

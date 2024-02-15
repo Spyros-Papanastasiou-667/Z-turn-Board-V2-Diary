@@ -23,4 +23,12 @@
 
 * Install `xlsclients`
 
+### WARN: Could not read hardware specifications
+
+* Vitis cannot open [generated] `.xsa` directly.. ([Question@Xilinx](https://support.xilinx.com/s/question/0D52E00006hpRchSAE/flash-memory-programming-issue-in-vitis-20211-could-not-read-hardware-specification)).
+
+#### Solution
+
+* [In Vitis], Create new component/platform, incorporating the generated `.xsa`
+
 ## Go to: [README](README.md)
