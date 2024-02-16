@@ -1,5 +1,8 @@
 ## Adding z-turn board to vivado:
 
+### Primary through GUI
+### Secondary/(tmp?) through TCL [command line]
+
 * clone `stv0g`'s repository:
     * $ git clone [https://github.com/stv0g/zturn-stuff.git](https://github.com/stv0g/zturn-stuff)
 * Inform Vivado of a new "board's definitions"'s location:

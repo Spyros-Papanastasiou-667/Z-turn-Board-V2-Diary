@@ -1,4 +1,21 @@
 ## Z-turn-Board-V2-Diary
+Z-turn is a [cheap] chinese board featuring a Zynq processor that incorporates not only a PS but also a PL unit.
+
+(My board has a Zynq7020 with a a dual core Arm & 80K LUTs (?)).
+
+### Repository goals:
+* #### 0: [Preliminary: Boot process]((.site/projects/Preliminary: Boot process.md))
+* #### 1: [PL only: Standalone](.site/projects/PL only: Standalone.md)
+* #### 2: [PS only: Standalone](.site/projects/PS only: Standalone.md)
+* #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS & PL: Standalone: Independent units.md)
+* #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS & PL: Standalone: PS reads PL.md)
+* #### *: [PS & PL: Standalone: PL reads PS](.site/projects/PS & PL: Standalone: PL reads PS.md)
+* #### *: [PS & PL: Linux: Independent units](.site/projects/PS & PL: Linux: Independent units.md)
+* #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS & PL: Linux: PS Reads PL.md)
+* #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS & PL: Linux: PL Reads PS.md)
+* #### *: [Test](.site/test)
+
+## Gotta blink 'em all! Blinkemall! 🧶🧶
 
 * Beginner friendly: VHDL & Vivado.
 * [Current] Goal: Linux w/ FPGA cooperation.
