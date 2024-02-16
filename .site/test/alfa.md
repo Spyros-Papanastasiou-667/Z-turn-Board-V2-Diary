@@ -1,4 +1,0 @@
-* alfa
-* beta
-* bravo
-* delta

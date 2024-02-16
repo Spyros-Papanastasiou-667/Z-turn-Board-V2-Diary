@@ -4,16 +4,15 @@ Z-turn is a [cheap] chinese board featuring a Zynq processor that incorporates n
 (My board has a Zynq7020 with a a dual core Arm & 80K LUTs (?)).
 
 ### Repository goals:
-* #### 0: [Preliminary: Boot process](.site/projects/Preliminary: Boot process.md)
-* #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone)
-* #### 2: [PS only: Standalone](.site/projects/PS only: Standalone.md)
-* #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS & PL: Standalone: Independent units.md)
-* #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS & PL: Standalone: PS reads PL.md)
-* #### *: [PS & PL: Standalone: PL reads PS](.site/projects/PS & PL: Standalone: PL reads PS.md)
-* #### *: [PS & PL: Linux: Independent units](.site/projects/PS & PL: Linux: Independent units.md)
-* #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS & PL: Linux: PS Reads PL.md)
-* #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS & PL: Linux: PL Reads PS.md)
-* #### *: [Test](.site/test)
+* #### 0: [Preliminary: Boot process](.site/Preliminary:_Boot_process/README.md)
+* #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone/README.md)
+* #### 2: [PS only: Standalone](.site/projects/PS_only:_Standalone/README.md)
+* #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
+* #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)
+* #### *: [PS & PL: Standalone: PL reads PS](.site/projects/PS_&_PL:_Standalone:_PL_reads_PS/README.md)
+* #### *: [PS & PL: Linux: Independent units](.site/projects/PS_&_PL:_Linux:_Independent_units/README.md)
+* #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS_&_PL:_Linux:_PS_Reads_PL/README.md)
+* #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS_&_PL:_Linux:_PL_Reads_PS/README.md)
 
 ## Gotta blink 'em all! Blinkemall! 🧶🧶
 
