@@ -3,8 +3,11 @@ Z-turn is a [cheap] chinese board featuring a Zynq processor that incorporates n
 
 (My board has a Zynq7020 with a a dual core Arm & 80K LUTs (?)).
 
+* (Versions): Vitis/Vivado @ 2023.2.2
+
 ### Repository goals:
-* #### 0: [Preliminary: Boot process](.site/Preliminary:_Boot_process/README.md)
+* #### 0: [Preliminary: Boot process](.site/Preliminary/Boot_process/README.md)
+* #### 0: [Preliminary: Adding the board](.site/Preliminary/Adding_the_board/README.md)
 * #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone/README.md)
 * #### 2: [PS only: Standalone](.site/projects/PS_only:_Standalone/README.md)
 * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
@@ -41,8 +44,7 @@ vhdl + linux:
 
 ## References
 
-* youtube: [Zynq boot procedure](https://www.youtube.com/watch?v=bGgPLgnntRk)
-    * FSBL (first stage bootloader) > check SD/NAND/.. > init PS > program PL (bitstream) > jump
+
 * Video
 * [Z-turn Board Tutorial Book](https://www.myirtech.com/soft.asp?id=969)
 * error: https://blog.csdn.net/yihuajack/article/details/120714268
@@ -51,3 +53,7 @@ vhdl + linux:
 
 ## Go to: [Adding board](Adding_board.md)
 ## Go to: [Problems](Problems.md)
+
+# Extra
+
+used `ReText`(link)
