@@ -4,7 +4,7 @@ Z-turn is a [cheap] chinese board featuring a Zynq processor that incorporates n
 (My board has a Zynq7020 with a a dual core Arm & 80K LUTs (?)).
 
 ### Repository goals:
-* #### 0: [Preliminary: Boot process]((.site/projects/Preliminary: Boot process.md))
+* #### 0: [Preliminary: Boot process](.site/projects/Preliminary: Boot process.md)
 * #### 1: [PL only: Standalone](.site/projects/PL only: Standalone.md)
 * #### 2: [PS only: Standalone](.site/projects/PS only: Standalone.md)
 * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS & PL: Standalone: Independent units.md)
