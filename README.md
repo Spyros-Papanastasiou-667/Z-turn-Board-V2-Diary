@@ -5,7 +5,7 @@ Z-turn is a [cheap] chinese board featuring a Zynq processor that incorporates n
 
 ### Repository goals:
 * #### 0: [Preliminary: Boot process](.site/projects/Preliminary: Boot process.md)
-* #### 1: [PL only: Standalone](.site/projects/PL only: Standalone.md)
+* #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone)
 * #### 2: [PS only: Standalone](.site/projects/PS only: Standalone.md)
 * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS & PL: Standalone: Independent units.md)
 * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS & PL: Standalone: PS reads PL.md)
