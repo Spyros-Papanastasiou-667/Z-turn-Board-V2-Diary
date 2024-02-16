@@ -1,5 +1,13 @@
 ## Vitis' Linux (Gentoo) problems:
 
+### Primary problems
+
+#### ERROR: `libssl.so.10` missing
+
+* Solution: Run `vitis` using:
+    * `$ Exec=env LD_LIBRARY_PATH=/path/to/Vitis/2023.2/tps/lnx64/cmake-3.24.2/libs/Ubuntu:$LD_LIBRARY_PATH /path/to/Vitis/2023.2/bin/vitis`
+* Source: [AUR[Vitis]@Archlinux](https://aur.archlinux.org/packages/vitis)
+
 ### ERROR: Segmentation fault: ([question@Xilinx](https://support.xilinx.com/s/question/0D54U00006alPtOSAU/segmentation-fault-invoking-xsct-indirectly-using-the-xsct-script-in-vitis-bin-folder-resolved)):
 
 #### Command:
@@ -10,6 +18,8 @@
     * `$ rm /path/to/Vitis/2023.2/bin/unwrapped/lnx64.o/rlwrap`
     * `$ install rlwrap`
     * `$ ln -s /usr/bin/rlwrap /path/to/Vitis/2023.2/bin/unwrapped/lnx64.o/rlwrap`
+
+### Secondary problems
 
 ### ERROR: `libssl.so.10` missing
 
@@ -30,5 +40,10 @@
 #### Solution
 
 * [In Vitis], Create new component/platform, incorporating the generated `.xsa`
+
+### EXTRA:
+
+* remove libgcc_*
+* TODO: remove gcc (?)
 
 ## Go to: [README](README.md)
