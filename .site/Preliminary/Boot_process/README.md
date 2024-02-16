@@ -1,4 +1,4 @@
-## Preliminary: Boot process: Boot image creation outline:
+## Preliminary: Boot process: Outline:
 
 ### Description
 The z-turn board can be booted from either:
