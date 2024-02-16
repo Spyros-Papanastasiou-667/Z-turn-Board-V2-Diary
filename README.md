@@ -1,6 +1,8 @@
 ## Z-turn-Board-V2-Diary
 [Z-turn](https://www.myirtech.com/list.asp?id=708) is a [cheap] chinese board featuring a [Zynq](https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html) processor. ([Overview:pdf](https://www.myirtech.com/download/Zynq7000/Z-turnBoardV2.pdf)).
 
+![<Z-Turn image>](.site/projects/zturnboardv2top.jpg)
+
 (Zynqs incorporate both a PL and a PS unit).
 
 (My board has Zynq7020 with a dual core Arm & 80K LUTs (?)).
@@ -21,6 +23,7 @@ I'll try to keep the repo, "Beginner Friendly"..
 * #### *: [PS & PL: Linux: Independent units](.site/projects/PS_&_PL:_Linux:_Independent_units/README.md)
 * #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS_&_PL:_Linux:_PS_Reads_PL/README.md)
 * #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS_&_PL:_Linux:_PL_Reads_PS/README.md)
+
 ### ([Various problems and solutions](Problems.md))
 
 ### Notes
