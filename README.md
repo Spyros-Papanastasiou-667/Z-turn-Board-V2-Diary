@@ -15,6 +15,8 @@ I'll try to keep the repo, "Beginner Friendly"..
 * #### Gotta blink 'em all, Blinkemall!! 🧶🧶
 * #### 0: [Preliminary: Boot process](.site/Preliminary/Boot_process/README.md)
 * #### 0: [Preliminary: Adding the board](.site/Preliminary/Adding_the_board/README.md)
+* #### 0: [Preliminary: Advanced: Creating a custom module](.site/Preliminary/Module/README.md)
+* #### 0: [Preliminary: Peripherals: MIO](.site/Preliminary/Peripherals/README.md)
 * #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone/README.md)
 * #### 2: [PS only: Standalone](.site/projects/PS_only:_Standalone/README.md)
 * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
