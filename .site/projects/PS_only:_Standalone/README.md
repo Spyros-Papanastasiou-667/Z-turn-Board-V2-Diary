@@ -1,12 +1,26 @@
 Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)..
 
-# PL only: Standalone
+# PS only: Standalone
 
 (As per "[PL only: Standalone](../PL_only:_Standalone/README.md)"), We'll blink:
 
 * CAN: 2 bits
 * User leds: 1 and 2s
 * User Button: (input only)
+
+## We will need our exported platform from [PL only: Standalone](../PL_only:_Standalone/README.md)
+
+## Starting Vitis with [our [standalone (OS)] platform]:
+![](images/vitis.1.jpg "block diagram")
+
+![](images/vitis.2.jpg "standalone OS")
+
+![](images/vitis.3.jpg "vitis has platform")
+
+## Let's add a "Hellow World" application. (Not a "Linux Hellow World")!
+![](images/vitis.4.jpg "hellow_world.1")
+
+![](images/vitis.5.jpg "hellow_world.2")
 
 ## Pins:
 
