@@ -19,7 +19,7 @@ They can also be seen under `FIXED_IO` and `DDR` entries inside the  `I/O Ports`
 
 ### EMIO
 
-I think EMIO serves as sharing PL's pins with PS.
+I think EMIO serves as sharing PL's pins to PS.
 
 (I'm a bit unsure of the following, but):
 

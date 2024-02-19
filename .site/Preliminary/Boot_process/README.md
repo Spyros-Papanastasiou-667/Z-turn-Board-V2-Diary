@@ -6,7 +6,7 @@ The z-turn board can be booted from either:
 * the SD card
 * or the QSPI (?) [onboard] flash
 
-I'll only cope with the first method, (unless I have a JTAG programmer)..
+I'll only cope with the first method, (I couldn't find [external] access to the QSPI's pins :'(..
 
 ### Boot from the SD card:
 * (Set the appropriate jumpers: J1:J2: OFF:ON)
