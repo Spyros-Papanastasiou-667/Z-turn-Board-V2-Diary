@@ -62,3 +62,5 @@ After each "platform export" [from vivado], one needs to update the `.xsa` file:
 And rebuild..
 
 ## [Problems](../../../Problems.md).
+
+## [My `BOOT.bin`]()
