@@ -27,8 +27,3 @@
 ### ERROR: No default clock is selected
 * Limit to single clock under: `Block_design/Platform_setup`
 * Ref: [chinese site](https://blog.csdn.net/yihuajack/article/details/120714268)
-
-### ERROR: -unconfirmed-: Bricked: Programmed without SD support! (Cannot be reprogrammed [through SD]).
-* Since the `QSPI` is.. `SPI` flash, one can use an `SPI` programmer to program it.
-* Access through: -pins-
-* Send file: -file-

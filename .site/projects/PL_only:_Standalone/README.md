@@ -78,7 +78,7 @@ end Behavioral;
     * Add Zynq
         * Let it automate: Blocks
         * Remove: Secondary_clock/AXI_interfaces/I2C/etc
-            * IMPORTANT: -unconfirmed-: Leave SD card support, enabled! (Needs it to be programmable through SD [the next time]).
+            * IMPORTANT: Leave SD card support ON! This way, VHDL will be transferred to the PL. (CONFIRMED).
         * Create Wrapper
         * Set default clock (after wrapper). (Open "Platform Setup").
     * Add VHDL code as module
@@ -98,7 +98,7 @@ end Behavioral;
 #### Block automation
 ![img: Block automation](images/automation.jpg)
 
-#### Remove extraneous (optional). IMPORTANT: Leave SD support/access, ON.
+#### Remove extraneous (optional). IMPORTANT: Leave `SD` enabled (used for transfer of VHDL to the PL).
 ![img: Remove highlighted](images/remove_highlighted.jpg)
 
 ![img: Removing MIO](images/removing_MIO.jpg)
