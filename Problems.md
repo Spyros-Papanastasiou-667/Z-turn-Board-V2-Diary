@@ -1,6 +1,5 @@
 ## Vitis' Linux problems:
-### Primary problems
-#### ERROR: `libssl.so.10` missing
+### ERROR: `libssl.so.10` missing
 * Solution: Run `vitis` using:
     * `$ Exec=env LD_LIBRARY_PATH=/path/to/Vitis/2023.2/tps/lnx64/cmake-3.24.2/libs/Ubuntu:$LD_LIBRARY_PATH /path/to/Vitis/2023.2/bin/vitis`
 * (Source: [AUR[Vitis]@Archlinux](https://aur.archlinux.org/packages/vitis))
@@ -28,3 +27,8 @@
 ### ERROR: No default clock is selected
 * Limit to single clock under: `Block_design/Platform_setup`
 * Ref: [chinese site](https://blog.csdn.net/yihuajack/article/details/120714268)
+
+### ERROR: -unconfirmed-: Bricked: Programmed without SD support! (Cannot be reprogrammed [through SD]).
+* Since the `QSPI` is.. `SPI` flash, one can use an `SPI` programmer to program it.
+* Access through: -pins-
+* Send file: -file-

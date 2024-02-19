@@ -78,6 +78,7 @@ end Behavioral;
     * Add Zynq
         * Let it automate: Blocks
         * Remove: Secondary_clock/AXI_interfaces/I2C/etc
+            * IMPORTANT: -unconfirmed-: Leave SD card support, enabled! (Needs it to be programmable through SD [the next time]).
         * Create Wrapper
         * Set default clock (after wrapper). (Open "Platform Setup").
     * Add VHDL code as module
@@ -97,7 +98,7 @@ end Behavioral;
 #### Block automation
 ![img: Block automation](images/automation.jpg)
 
-#### Remove extraneous (optional)
+#### Remove extraneous (optional). IMPORTANT: Leave SD support/access, ON.
 ![img: Remove highlighted](images/remove_highlighted.jpg)
 
 ![img: Removing MIO](images/removing_MIO.jpg)
@@ -147,5 +148,7 @@ end Behavioral;
 ![img: Export](images/export.jpg)
 
 ![img: Export: Include bitstream](images/export.2.jpg)
+
+## TODO: Second method: Export bitsream and use Vitis:Template:FSBL
 
 ## Phase 2: [Open Vitis](Vitis.md)
