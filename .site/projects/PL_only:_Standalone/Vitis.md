@@ -50,6 +50,9 @@
 #### Bitstream (VHDL)
 ![img: Bitstream](images/vitis/bitstream.jpg)
 
+### Final [state]
+![img: Final](images/vitis/final.jpg)
+
 ## Notes:
 
 After each "platform export" [from vivado], one needs to update the `.xsa` file:
