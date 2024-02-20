@@ -8,10 +8,11 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 * User leds: 1 and 2s
 * User Button: (input only)
 
-## We will need our exported platform from [PL only: Standalone](../PL_only:_Standalone/README.md)
+## We need a similar platform to the [PL only: Standalone](../PL_only:_Standalone/README.md) one, but without disabling all the peripherals. (We probably need UART1 and USB)..
 
-## Starting Vitis with [our [standalone (OS)] platform]:
-![](images/vitis.1.jpg "block diagram")
+![](images/vitis.0.jpg "block design")
+
+![](images/vitis.1.svg "block diagram")
 
 ![](images/vitis.2.jpg "standalone OS")
 
@@ -49,3 +50,6 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 ![](images/pins.3.jpg "releasing CAN0")
 
 
+uart1
+
+TESting: Changin XSA needs rebuilding BSP?
