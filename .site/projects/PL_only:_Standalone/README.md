@@ -9,7 +9,7 @@ Accessible to the PL:
 Limited to the PS:
 
 * LED1/2
-* CAN
+* ~~CAN~~
 * Button
 
 Lets blink, the available ones, around 1Hz +- 1.
