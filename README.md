@@ -18,7 +18,7 @@ I'll try to keep the repo, "Beginner Friendly"..
 * #### 0: [Preliminary: Advanced: Creating a custom module](.site/Preliminary/Module/README.md)
 * #### 0: [Preliminary: Peripherals: MIO](.site/Preliminary/Peripherals/README.md)
 * #### 1: [PL only: Standalone](.site/projects/PL_only:_Standalone/README.md)
-* #### 2: [PS only: Standalone](.site/projects/PS_only:_Standalone/README.md)
+* #### 2: [PL & PS: Standalone](.site/projects/PL_&_PS:_Standalone/README.md)
 * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
 * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)
 * #### *: [PS & PL: Standalone: PL reads PS](.site/projects/PS_&_PL:_Standalone:_PL_reads_PS/README.md)

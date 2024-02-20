@@ -41,7 +41,7 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 ![](images/button.schem.2.jpg "button.b")
 
 ## Releasing the pins:
-## Which are [already] bound [to other functions]? (CAN is).
+## Bound pins: CAN0
 ### Vivado:
 ![](images/pins.1.jpg "bound pins")
 
@@ -49,7 +49,9 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 ### Releasing `CAN0`
 ![](images/pins.3.jpg "releasing CAN0")
 
+## [Identifying] USB/UART dependency:
+![](images/usb.jpg "UART1 dependency")
 
-uart1
+## Phase 2: [Standalone(GPIO)](GPIO.md)
 
 TESting: Changin XSA needs rebuilding BSP?
