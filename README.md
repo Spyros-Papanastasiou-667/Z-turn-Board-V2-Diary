@@ -50,4 +50,5 @@ I'll try to keep the repo, "Beginner Friendly"..
 * OS: Linux([Gentoo](https://www.gentoo.org/))
 * Markdown editor: [ReText](https://github.com/retext-project/retext)
 * [Vivado] Export [diagram] to `svg`: `$ write_bd_layout -force -format svg -verbose /tmp/design.svg`
+* Markdown [syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (*github*)
 
