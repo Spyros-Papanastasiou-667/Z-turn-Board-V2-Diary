@@ -1,18 +1,20 @@
-Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)..
+Assuming you understand the previous, [PL](../PL/README.md), part..
 
-# PS only: Standalone
+"**Standalone**" is the type of OS that will run on the PS. Alteratives are "**FreeRTOS**" and "**Linux**".
 
-(As per "[PL only: Standalone](../PL_only:_Standalone/README.md)"), We'll blink:
+# PL&PS // asynced // polling
+
+(As per "[PL](../PL/README.md)"), We'll blink:
 
 * ~~CAN: 2 bits~~
 * User leds: 1 and 2s
 * User Button: (input only)
 
-## We need a similar platform to the [PL only: Standalone](../PL_only:_Standalone/README.md) one, but without disabling all the peripherals. (We probably need UART1 and USB)..
+## We need a similar platform to the [PL](../PL/README.md) one, but without disabling all the peripherals. (We probably need UART1 and USB)..
 
 ![](images/vitis.0.jpg "block design")
 
-![](images/vitis.1.svg "block diagram")
+![](images/block.design.svg)
 
 ![](images/vitis.2.jpg "standalone OS")
 
@@ -55,6 +57,6 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 ## [Identifying] USB/UART dependency:
 ![](images/usb.jpg "UART1 dependency")
 
-## Phase 2: [Standalone(GPIO)](GPIO.md)
+## Phase 2: [PS GPIO](GPIO.md)
 
 TESting: Changin XSA needs rebuilding BSP?
