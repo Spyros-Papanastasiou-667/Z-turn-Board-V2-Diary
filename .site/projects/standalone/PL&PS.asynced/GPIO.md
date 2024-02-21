@@ -1,5 +1,7 @@
+## PL&PS // asynced // polling: Phase 2
+
 ## Pin numbers
-As per [PL & PS: Standalone](README.md), pins are:
+As per [PL&PS // asynced // polling](README.md), pins are:
 
 * ~~CAN: MIO: 14, 15~~
 * [User] LEDs: MIO: 0, 9
@@ -158,16 +160,13 @@ if (blink_ret != 0)
 ```c
 #include "xgpiops.h"                                                    // Include header
 Status = XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);  // Initialize
-XGpioPs_SetDirectionPin(&Gpio, LED1, 1);                                // Set direction
+XGpioPs_SetDirectionPin(&Gpio, LED1, 1);                                // Set direction (0/1: input/output)
 XGpioPs_SetOutputEnablePin(&Gpio, LED1, 1);                             // Enable output
 button = XGpioPs_ReadPin(&Gpio, BUTTON);                                // Read
 XGpioPs_WritePin(&Gpio, LED1, LED_state);                               // Write
 ```
 
-TODO: Refence
-
-Direction: 0(input), 1(output)
-
 ## References
 * [Implementation of GPIO ( i.e., buttons, LED, and Pmod ) via EMIO on ZedBoard](https://youtu.be/CHsidFIXUEE) (*youtube*)
 * [xgpiops_polled_example.c](https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/gpiops/examples/xgpiops_polled_example.c) (*github*)
+* TODO: More!!!
