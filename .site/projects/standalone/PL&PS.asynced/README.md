@@ -30,6 +30,9 @@ Assuming you understand: [PL only: Standalone](../PL_only:_Standalone/README.md)
 
 ![](images/can.schem.2.jpg "can 1.b")
 
+### Oops: CAN not be 😝!
+![](images/can.3.jpg "can not be")
+
 ### LED: 1,2: MIO{0,9}
 ![](images/led.schem.1.jpg "led 1")
 
