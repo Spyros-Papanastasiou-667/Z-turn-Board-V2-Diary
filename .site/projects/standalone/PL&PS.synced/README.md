@@ -1,4 +1,4 @@
-## PL&PS // synced(AXI) // interrupt
+## PL&PS // synced(AXI) // interrupt // w/o interrupt controller
 
 ### Goal:
 * Blink all from PL.
@@ -14,7 +14,8 @@
 
 ![](images/bsp.0.jpg)
 
-* #### And "Regenerate BSP":
+* #### ~~And "Regenerate BSP":~~
+* #### (BSP gets automatically regenerated (when changing `.xsa`)
 
 ![](images/bsp.1.jpg)
 
@@ -29,6 +30,15 @@ rename to `.cpp`
 set mastere AXI
 
 XPAR_XGPIO_1_BASEADDR per diagram
+now using system device tree (SDT) based flow, info: https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2743468485/Porting+embeddedsw+components+to+system+device+tree+SDT+based+flow
+
+interrupt controller
+interrupt_controller:edge_trigger
+~~always enable interrupts last~~
+the order of commands is important with interrupts
+
+* set default gpio(button) value to 1(not pressed)
+* 0xFFFFFFFF for button
 
 XGpio GpioCLK;
 Status = XGpio_Initialize(&GpioCLK, XGPIO_AXI_BASEADDRESS);
@@ -47,3 +57,6 @@ bits are '0' in both cases img:[0:0]
 * gpio [API](https://xilinx.github.io/embeddedsw.github.io/gpio/doc/html/api/group__gpio.html) (*API*)
 * Error: [Can't find xgpio.h](https://support.xilinx.com/s/question/0D52E00006hpTGBSA2/cant-find-xgpioh-xtmrctrh?language=en_US) (*Xilinx*)
 * [`XGpioPs_IntrClear()` examples](https://cpp.hotexamples.com/examples/-/-/XGpioPs_IntrClear/cpp-xgpiops_intrclear-function-examples.html)
+* Offtopic: [IRQs](https://youtu.be/luD2y81pD8s) (*youtube*)
+* [Interrupts AXI GPIO and AXI Timer ECE 699: Lecture 5](https://people-ece.vse.gmu.edu/coursewebpages/ECE/ECE699_SW_HW/S16/viewgraphs/ECE699_lecture_5.pdf) (*pdf*)
+* [GIC vs AXI Interrupt Controller](https://community.element14.com/technologies/fpga-group/f/forum/50536/gic-vs-axi-interrupt-controller/195430) (*forum*)

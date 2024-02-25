@@ -7,7 +7,7 @@ TODO: `.gif`
 
 (Zynqs incorporate both a PL and a PS unit).
 
-(My board has Zynq7020 with a dual core Arm & 80K LUTs (?)).
+(My board has Zynq7020 with a dual core Arm & 80K logic cells).
 
 I'll try to keep the repo, "Beginner Friendly"..
 
@@ -24,7 +24,7 @@ I'll try to keep the repo, "Beginner Friendly"..
     * [PL](.site/projects/standalone/PL/README.md)
     * [PL&PS // asynced // polling](.site/projects/standalone/PL&PS.asynced/README.md)
     * [PL&PS // asynced // interrupt](.site/projects/standalone/PL&PS.asynced.interrupt/README.md)
-    * [PL&PS // synced(AXI) // interrupt](.site/projects/standalone/PL&PS.synced/README.md)
+    * [PL&PS // synced(AXI) // interrupt // w/o interrupt controller](.site/projects/standalone/PL&PS.synced/README.md)
 * Goals:
     * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
     * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)
