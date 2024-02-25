@@ -5,6 +5,8 @@ TODO: `.gif`
 
 !['Z-Turn image'](.site/projects/zturnboardv2top.jpg)
 
+![](.site/images/preview.gif "Board blinking LEDs")
+
 (Zynqs incorporate both a PL and a PS unit).
 
 (My board has Zynq7020 with a dual core Arm & 80K logic cells).
