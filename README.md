@@ -21,10 +21,10 @@ I prefer a top-down approach.
     * [Advanced: Creating a custom module](.site/Preliminary/Module/README.md)
     * [Peripherals: MIO](.site/Preliminary/Peripherals/README.md)
 * #### 1: Standalone:
-    * [PL](.site/projects/standalone/PL/README.md)
-    * [PL&PS // asynced // polling](.site/projects/standalone/PL&PS.asynced/README.md)
-    * [PL&PS // asynced // interrupt](.site/projects/standalone/PL&PS.asynced.interrupt/README.md)
-    * [PL&PS // synced(AXI) // interrupt (w/o interrupt controller)](.site/projects/standalone/PL&PS.synced/README.md)
+    * Chapter 1: [PL](.site/projects/standalone/PL/README.md)
+    * Chapter 2: [PL&PS // asynced // polling](.site/projects/standalone/PL&PS.asynced/README.md)
+    * Chapter 3: [PL&PS // asynced // interrupt](.site/projects/standalone/PL&PS.asynced.interrupt/README.md)
+    * Chapter 4: [PL&PS // synced(AXI) // interrupt (w/o interrupt controller)](.site/projects/standalone/PL&PS.synced/README.md)
 * Goals:
     * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
     * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)

@@ -1,4 +1,6 @@
-## PL&PS // synced(AXI) // interrupt (w/o interrupt controller)
+# Chapter 4
+
+## "PL&PS // synced(AXI) // interrupt (w/o interrupt controller)"
 
 ### Goal:
 * Blink RGB(PL)
@@ -20,6 +22,31 @@
 ### Our new [final] design
 
 ![](images/block.design.svg)
+
+#### Changes:
+
+* We're exporting CLK_out(1:100e6)
+    * We'll need it to sync the LED1(PS) and LED2(PS)
+* Importing Button(PS)
+* The method is `AXI`. `AXI` helps communicate between PL and PS. Share ports/memory/etc..
+
+#### Interrupts
+
+* PS acts on Button(PS) and sends output to PL(AXI)
+* PL calculates CLK_out(PL) and sends input to the PS(AXI)
+* CLK_out syncs LED1(PS) and LED2(PS) by acting as an interrupt(IRQ)
+    * IMPORTANT: I failed using an interrupt controller, and have, thus, fed, the interrupt, directly to IRQ(Zynq).
+    * (I suppose, an interrupt controller is needed between AXI(CLK_out) and Zynq(IRQ)).
+* Notes:
+    * GPIO(axi_gpio_#) naming is important. The ID, helps choose the GPIO(I/O) in the PS.
+
+![](images/gpio.1.jpg "img:gpio_in")
+
+![](images/gpio.2.jpg "img:gpio_out")
+
+![](images/irq.jpg "img:irq")
+
+![](images/axi.jpg "(img:axi)")
 
 ## test
 
