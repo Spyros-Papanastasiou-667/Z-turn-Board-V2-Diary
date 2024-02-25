@@ -1,10 +1,6 @@
 ## Z-turn-Board-V2-Diary
 [Z-turn](https://www.myirtech.com/list.asp?id=708) is a [cheap] chinese board featuring a [Zynq](https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html) processor. ([Overview:pdf](https://www.myirtech.com/download/Zynq7000/Z-turnBoardV2.pdf)).
 
-TODO: `.gif`
-
-!['Z-Turn image'](.site/projects/zturnboardv2top.jpg)
-
 ![](.site/images/preview.gif "Board blinking LEDs")
 
 (Zynqs incorporate both a PL and a PS unit).
