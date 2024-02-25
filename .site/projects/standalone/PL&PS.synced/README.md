@@ -57,6 +57,7 @@
 #### [Code(C++)](code)
 
 * Vitis: For those interested, renaming `.c` to `.cpp` and using `extern "C" {}` on `C` headers, seems to work (for now 😱).
+* Instead of describing the code, i'll jump right to the next chapter, with the hopes of using an `AXI Interrupt Controller` [successfully].
 
 #### Code(VHDL)
 
