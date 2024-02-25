@@ -1,27 +1,25 @@
-## PL&PS // synced(AXI) // interrupt // w/o interrupt controller
+## PL&PS // synced(AXI) // interrupt (w/o interrupt controller)
 
 ### Goal:
-* Blink all from PL.
-* Pause, with button, from PS.
-
-### More specifically:
-* Transfer downsampled clock from PL to PS
-* Transfer Button trigger from PS to PL
-* Pause PL and PS
+* Blink RGB(PL)
+* Blink LED 1,2 (PS(CLK(PL)))
+* Pause with Button(PS)
+    * (Pause RGB(PL) with Button(PS))
 
 ### Premature errors
-* #### You may need to re-set the platform:
+* #### Update code(Vitis) with new Design(Vivado):
 
-![](images/bsp.0.jpg)
+![](images/xsa.1.jpg)
 
-* #### ~~And "Regenerate BSP":~~
-* #### (BSP gets automatically regenerated (when changing `.xsa`)
+![](images/xsa.2.jpg)
 
-![](images/bsp.1.jpg)
+![](images/xsa.3.jpg)
 
-![](images/bsp.2.jpg)
+![](images/xsa.4.jpg)
 
-![](images/bsp.3.jpg)
+### Our new [final] design
+
+![](images/block.design.svg)
 
 ## test
 
