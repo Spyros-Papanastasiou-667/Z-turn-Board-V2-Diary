@@ -1,6 +1,6 @@
 # Chapter 4
 
-## "PL&PS // synced(AXI) // interrupt (w/o interrupt controller)"
+## PL&PS // synced(AXI) // interrupt
 
 ### Goal:
 * Blink RGB(PL)
@@ -56,8 +56,10 @@
 
 #### [Code(C++)](code)
 
+* [[Code] Explanation](code.md)
 * Vitis: For those interested, renaming `.c` to `.cpp` and using `extern "C" {}` on `C` headers, seems to work (for now 😱).
 * Instead of describing the code, i'll jump right to the next chapter, with the hopes of using an `AXI Interrupt Controller` [successfully].
+    * I suppose, it's not needed. (Proceeding with next chapters).
 
 #### Code(VHDL)
 
@@ -124,27 +126,9 @@ begin
 end Behavioral;
 ```
 
-## test
-
-now using system device tree (SDT) based flow, info: https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2743468485/Porting+embeddedsw+components+to+system+device+tree+SDT+based+flow
-
-interrupt controller
-interrupt_controller:edge_trigger
-~~always enable interrupts last~~
-the order of commands is important with interrupts
-
-* set default gpio(button) value to 1(not pressed)
-* 0xFFFFFFFF for button
-
-XGpio GpioCLK;
-Status = XGpio_Initialize(&GpioCLK, XGPIO_AXI_BASEADDRESS);
-XGPIOPS_IRQ_TYPE_EDGE_BOTH
-channel 1 in all cases
-XGpio_SetDataDirection(&GpioButton, 1, 0);  // 0/1 ~ output/input
-
-bits are '0' in both cases img:[0:0] 
-
 ## References:
+
+* [Porting embeddedsw components to system device tree (SDT) based flow](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2743468485/Porting+embeddedsw+components+to+system+device+tree+SDT+based+flow)
 * [ZYNQ for beginners: programming and connecting the PS and PL | Part 1](https://youtu.be/_odNhKOZjEo) (*youtube*)
 * [ZYNQ for beginners: programming and connecting the PS and PL | Part 2](https://youtu.be/AOy5l36DroY) (*youtube*)
 * [AXI gpio standalone driver](https://github.com/Xilinx/embeddedsw/tree/master/XilinxProcessorIPLib/drivers/gpio) (*github*)
