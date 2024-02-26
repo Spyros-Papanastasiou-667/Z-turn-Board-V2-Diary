@@ -1,8 +1,10 @@
 ## [(source code)](code)
 
-Continuing on from [PL&PS // asynced // interrupt](../PL&PS.asynced.interrupt/README.md)..
+(Assuming [PL&PS // asynced // interrupt](../PL&PS.asynced.interrupt/README.md) is completed)..
 
 ## Outline
+
+---
 
 ### Enabling GPIO(PS) interrupts(Button)
 
@@ -40,6 +42,8 @@ XGpioPs_IntrClearPin(&gpio, BUTTON_pin);    // (Ignore remaining "presses").
 XGpioPs_IntrEnablePin(&gpio, BUTTON_pin);   // (Enable(Failsafe))
 ```
 
+---
+
 ### Enabling GPIO(PL) interrupts(CLK_out)
 
 ```cpp
@@ -64,5 +68,3 @@ XGpio_InterruptDisable(&PL::gpioCLK, PL::CHANNEL);  // (Failsafe)
 XGpio_InterruptClear(&PL::gpioCLK, PL::CHANNEL);    // (Clear pending)
 XGpio_InterruptEnable(&PL::gpioCLK, PL::CHANNEL);   // (Enable(Failsafe))
 ```
-
-## Details

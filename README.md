@@ -13,6 +13,8 @@ I prefer a top-down approach.
 
 * (Versions): Vitis/Vivado @ 2023.2.2
 
+---
+
 ### Repository goals:
 * #### Gotta blink 'em all, Blinkemall!! 🧶🧶
 * #### 0: Preliminary:
@@ -33,12 +35,18 @@ I prefer a top-down approach.
     * #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS_&_PL:_Linux:_PS_Reads_PL/README.md)
     * #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS_&_PL:_Linux:_PL_Reads_PS/README.md)
 
+---
+
 ### ([Various problems and solutions](Problems.md))
+
+---
 
 ### Notes
 
 * IO-planner
 * xic: No need to download updates. Run `xic` from [].
+
+---
 
 ### References
 
@@ -47,6 +55,7 @@ I prefer a top-down approach.
 * unsure: https://www.youtube.com/watch?v=FujoiUMhRdQ
 * [schematic](https://www.myirtech.com/download/Zynq7000/zturnv2Schematic.pdf) (*pdf*)
 
+---
 
 ### Extra: Tools used:
 * OS: Linux([Gentoo](https://www.gentoo.org/))

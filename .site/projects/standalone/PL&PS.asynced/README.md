@@ -58,5 +58,3 @@ Assuming you understand the previous, [PL](../PL/README.md), part..
 ![](images/usb.jpg "UART1 dependency")
 
 ## Phase 2: [PS GPIO](GPIO.md)
-
-TESting: Changin XSA needs rebuilding BSP?

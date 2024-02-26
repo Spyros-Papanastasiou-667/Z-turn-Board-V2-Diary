@@ -153,5 +153,3 @@ blink();
 * [XGpioPs_SetIntrType()](https://xilinx.github.io/embeddedsw.github.io/gpiops/doc/html/api/group__gpiops.html) (*API*)
 * [API](https://xilinx.github.io/embeddedsw.github.io/gpiops/doc/html/api/group__gpiops.html) (*API*)
 * [IrqType](https://xilinx.github.io/embeddedsw.github.io/gpiops/doc/html/api/xgpiops_8h.html) (*API*)
-
-## My [`BOOT.bin`](BOOT.bin)

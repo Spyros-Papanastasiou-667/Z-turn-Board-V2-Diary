@@ -3,10 +3,13 @@
 ## PL&PS // synced(AXI) // interrupt
 
 ### Goal:
+
 * Blink RGB(PL)
 * Blink LED 1,2 (PS(CLK(PL)))
 * Pause with Button(PS)
     * (Pause RGB(PL) with Button(PS))
+
+---
 
 ### Our new [final] design
 
@@ -43,6 +46,8 @@
 
 ![](https://upload.wikimedia.org/wikipedia/commons/5/5a/Pullup_Resistor.png "w:pull-up resistor")
 
+---
+
 ### Update code(Vitis) with new Design(Vivado):
 
 ![](images/xsa.1.jpg)
@@ -53,14 +58,18 @@
 
 ![](images/xsa.4.jpg)
 
-#### [Code(C++)](code)
+---
+
+### [Code(C++)](code)
 
 * [[Code] Explanation](code.md)
 * Vitis: For those interested, renaming `.c` to `.cpp` and using `extern "C" {}` on `C` headers, seems to work (for now 😱).
 * Instead of describing the code, i'll jump right to the next chapter, with the hopes of using an `AXI Interrupt Controller` [successfully].
     * I suppose, it's not needed. (Proceeding with next chapters).
 
-#### Code(VHDL)
+---
+
+### Code(VHDL)
 
 ```vhdl
 library IEEE;
@@ -124,6 +133,8 @@ begin
     CLK_out <= ticks(N - 1);
 end Behavioral;
 ```
+
+---
 
 ## References:
 
