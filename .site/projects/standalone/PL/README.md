@@ -14,6 +14,8 @@ Limited to the PS:
 
 Lets blink, the available ones, around 1Hz +- 1.
 
+---
+
 ## Code:
 
 ```vhdl
@@ -68,6 +70,8 @@ begin
 
 end Behavioral;
 ```
+
+---
 
 ## Procedure:
 
@@ -154,6 +158,12 @@ end Behavioral;
 
 ![img: Final: 2](images/final.2.jpg)
 
+---
+
 ## TODO: Second method: Export bitsream and use Vitis:Template:FSBL
 
+---
+
 ## Phase 2: [Open Vitis](Vitis.md)
+
+---

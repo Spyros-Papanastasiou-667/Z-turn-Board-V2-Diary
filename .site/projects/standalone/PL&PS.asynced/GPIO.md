@@ -12,6 +12,8 @@ Summary:
 * Output: MIO: 0, 9, ~~14, 15~~
 * Input: MIO: 50
 
+---
+
 ## We'll be using the `xgpiops` library (couldn't find documentation 😭)
 
 * There are two methods to read the button: **Polling** and **Interrupt**.
@@ -21,10 +23,14 @@ Summary:
 
 I'll include the `code` first:
 
+---
+
 ## Let's isolate our code: Create new, `blink.*`, files:
+
 ![](images/gpio.files.jpg)
 
 ### [`blink.h`](blink.h):
+
 ```c
 // Define a constant to avoid multiple inclusion [of this file].
 // -
@@ -143,6 +149,7 @@ int blink (void)
 ```
 
 ### [`helloworld.c`](helloworld.c) changes:
+
 ```c
 #include "blink.h"
 
@@ -152,6 +159,8 @@ if (blink_ret != 0)
     xil_printf("ERROR: BLINK(%d)\n", blink_ret);
 }
 ```
+
+---
 
 ## Breaking up the library:
 
@@ -166,7 +175,11 @@ button = XGpioPs_ReadPin(&Gpio, BUTTON);                                // Read
 XGpioPs_WritePin(&Gpio, LED1, LED_state);                               // Write
 ```
 
+---
+
 ## References
 * [Implementation of GPIO ( i.e., buttons, LED, and Pmod ) via EMIO on ZedBoard](https://youtu.be/CHsidFIXUEE) (*youtube*)
 * [xgpiops_polled_example.c](https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/gpiops/examples/xgpiops_polled_example.c) (*github*)
 * TODO: More!!!
+
+---

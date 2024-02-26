@@ -19,6 +19,8 @@
 * (Proper jumpers need to be set, on the "Z-turn board": J1/J2: OPEN/CLOSED).
 * (TODO: Check: FAT16?: Boot flag?).
 
+---
+
 ### Steps
 
 #### Open workspace. (I.e., open a folder through vitis, to be used as workspace). --
@@ -50,8 +52,12 @@
 #### Bitstream (VHDL)
 ![img: Bitstream](images/vitis/bitstream.jpg)
 
+---
+
 ### Final [state]
 ![img: Final](images/vitis/final.jpg)
+
+---
 
 ## Notes:
 
@@ -61,4 +67,8 @@ After each "platform export" [from vivado], one needs to update the `.xsa` file:
 
 And rebuild..
 
+---
+
 ## [Problems](../../../Problems.md).
+
+---

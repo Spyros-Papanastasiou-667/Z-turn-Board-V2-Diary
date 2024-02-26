@@ -7,9 +7,12 @@ Interrupts: Info:
 * Dangers of cyclic [interrupt] dependencies (**priority**). One interrupt may **hang** the others.
 * Same **handler** may trigger for multiple pins. **Differentiation** within handler may be needed.
 
+---
+
 ## PL&PS // asynced // interrupt
 
 ## General procedure
+
 ```c
 #include "xinterrupt_wrap.h"                                            // Include the header
 // XScuGic Intc;                                                        // Create an iterrupt controller (?)
@@ -22,6 +25,9 @@ Status = XSetupInterruptSystem(&Gpio,
                                ConfigPtr->IntrParent,
                                XINTERRUPT_DEFAULT_PRIORITY);            // (?)
 ```
+
+---
+
 ## Code:
 ### [`blink.h`](blink.h):
 ```c
@@ -144,9 +150,13 @@ static void IntrHandler(void* CallBackRef, u32 Bank, u32 Status)
 blink();
 ```
 
+---
+
 ## Notes:
 
 * Don't feel **frightened** by the `button` not triggering all the times. It needs [wiki:debouncing](https://en.wikipedia.org/wiki/Switch#Contact_bounce) since it **overtriggers** 😉.
+
+---
 
 ## References:
 * [xgpiops_intr_example.c](https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/gpiops/examples/xgpiops_intr_example.c) (*github*)
