@@ -8,17 +8,6 @@
 * Pause with Button(PS)
     * (Pause RGB(PL) with Button(PS))
 
-### Premature errors
-* #### Update code(Vitis) with new Design(Vivado):
-
-![](images/xsa.1.jpg)
-
-![](images/xsa.2.jpg)
-
-![](images/xsa.3.jpg)
-
-![](images/xsa.4.jpg)
-
 ### Our new [final] design
 
 ![](images/block.design.svg)
@@ -53,6 +42,16 @@
 * Buttons, usually use [w:pull-up](https://en.wikipedia.org/wiki/Pull-up_resistor) resistors, thus act inverted. I.e. active buttons' value is `0` and inactive `1`. I suppose they're called "active low". They actually "ground" the (CPU)pin:
 
 ![](https://upload.wikimedia.org/wikipedia/commons/5/5a/Pullup_Resistor.png "w:pull-up resistor")
+
+### Update code(Vitis) with new Design(Vivado):
+
+![](images/xsa.1.jpg)
+
+![](images/xsa.2.jpg)
+
+![](images/xsa.3.jpg)
+
+![](images/xsa.4.jpg)
 
 #### [Code(C++)](code)
 
