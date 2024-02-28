@@ -1,5 +1,19 @@
 # Hellow World // Preliminaries
 
+# Phase 0: Preparing the PL(Logic design)
+
+As per [Petalinux Reference: Ch3: Configuring a Hardware Platform for Linux][reference], in order for our `.xsa` to be compatible with Linux, some requirements must be met: (unverified):  
+(You can [probably] just take the default Zynq IP, [onto your Block Design\]).  
+
+* [unused\] TTC (Triple Timer Counter)
+* UART (UART1)
+* QSPI
+* SD
+* DDR (?)
+* (Ethernet)
+
+---
+
 # Part 1: Installation
 
 ## Downloading
@@ -55,10 +69,25 @@ umount -Rl "$DEST"/*
     * The necessary packages can be estimated using these methods:
         * The [petalinux dependencies script][plnx], and
         * the [packages list spreadsheet][xlsx]
+* Also, fix the `/bin/sh` link to point to `/bin/bash` (`$ sudo dpkg-reconfigure dash` (?)).
 
 ---
 
-# Part 2: Building [Petalinux\]
+# Part 2: Configuration & Building
+
+(From within `Ubuntu` (*chroot*)).  
+[Login as a normal user. E.g.: `$ su - my_username`\].
+
+* Run the installer: `$ ./petalinux-v2023.2-10121855-installer.run --dir petalinux/ --platform "arm"`
+    * Where:
+    * `--dir`: Destination directory
+    * `--platform`: Limit to `Zynq 7000`
+* Source the "environment": `$ source petalinux/settings.sh`
+    * (This will ease access to commands of the form: `petalinux-*`)
+* Create a project: `$ petalinux-create --type project --source xilinx-zc702-v2023.2-10140544.bsp`
+* Enter: `$ cd xilinx-zc702-2023.2`
+* Import configuration: `$ petalinux-config --get-hw-description design_1_wrapper.xsa --silentconfig`
+* Build: `$ petalinux-build`
 
 ---
 
@@ -71,6 +100,7 @@ umount -Rl "$DEST"/*
 
 <How can these be made visible?>
 
+[reference]: https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf "Petalinux Reference"
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
 [ZC702]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html "ZC702 Evaluation Kit"
 [ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
