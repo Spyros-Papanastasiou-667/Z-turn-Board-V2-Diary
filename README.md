@@ -66,6 +66,6 @@ I prefer a top-down approach.
 * Markdown editor: [ReText](https://github.com/retext-project/retext)
 * [Vivado] Export [diagram] to `svg`: `$ write_bd_layout -force -format svg -verbose /tmp/design.svg`
 * Markdown [syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (*github*)  
-Stack overflow [tricks](https://stackoverflow.com/editing-help) (*stack*)
-
+Stack overflow [tricks](https://stackoverflow.com/editing-help) (*stack*)  
+[Mastering Markdown](https://roachhd.gitbooks.io/master-markdown/content/) (*gitbook*)
 ---

@@ -79,6 +79,14 @@ UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-
 
 [id]: http://example.com/  "Optional Title Here"
 
+* [id]: http://example.com/  "Optional Title Here"
+
+> [id]: http://example.com/  "Optional Title Here"
+
+  [id]: http://example.com/  "Optional Title Here"
+
+---
+
 # Part 2: Building [Petalinux] ([Part 1: Installation](#part-1))
 
 ---
