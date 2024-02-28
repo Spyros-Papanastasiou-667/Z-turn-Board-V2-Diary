@@ -1,6 +1,6 @@
 # Hellow World // Preliminaries
 
-# Part1: Installation ([Part 2][# Test])
+# Part1: Installation ([Part 2](# Test))
 
 ## Installing `Petalinux` under unsupported OS. Skip if on supported(Ubuntu).
 
