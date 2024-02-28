@@ -5,8 +5,10 @@
 ## Downloading
 
 Two things need to be downloaded from the download page:
-* The [petalinux][download], and
-* the [bsp][download] (Board Support Package)
+
+* The [petalinux][petalinux] [installer], and
+* the [BSP][petalinux] (Board Support Package) (for the z-turn platform (i.e. for Zynq7000))
+    * The proper(ZC702) BSP can be chosen according the [respective] [ZC702][ZC702] and [ZC706][ZC706] pages
 
 ---
 
@@ -63,8 +65,6 @@ Sources:
 
 ## Referencies
 
-[download]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
-
 [^1]: [Petalinux download page](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) (*Xilinx*)
 
 [^1]: [Petalinux download page](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) (*Xilinx*)
@@ -82,3 +82,9 @@ UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-
 # Part 2: Building [Petalinux] ([Part 1: Installation](#part-1))
 
 ---
+
+<How can these be made visible?>
+
+[petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
+[ZC702]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html "ZC702 Evaluation Kit"
+[ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
