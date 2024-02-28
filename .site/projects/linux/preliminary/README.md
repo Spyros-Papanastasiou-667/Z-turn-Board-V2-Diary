@@ -1,6 +1,6 @@
 # Hellow World // Preliminaries
 
-# Part 1: Installation. ([Part 2: Building](#part-2))
+# Part 1: Installation
 
 ## Downloading
 
@@ -12,17 +12,16 @@ Two things need to be downloaded from the download page:
 
 ---
 
-## Installing `Petalinux` under unsupported OS. (Skip if supported(Ubuntu)).
+## Installing on unsupported OS(Gentoo). (Skip if supported(Ubuntu)).
 
-[Current] Method: Chrooting [from our OS to Ubuntu].
+[Current] **Method**: Chrooting [from our OS to Ubuntu]
 
-(Future goal: Building Petalinux on Gentoo)
+(Future **goal**: Building Petalinux on **Gentoo**)
 
-### Install `Ubuntu` on a partition --
+* **Install** [the supported version of] [**`Ubuntu`**][Ubuntu] (e.g.: version: LTS) on a partition.
+* **Chroot** onto it:
 
-### Chroot onto it.
-
-#### Example script:
+Example script:
 
 ```bash
 #!/bin/bash
@@ -52,34 +51,21 @@ chroot . /bin/bash -l
 umount -Rl "$DEST"/*
 ```
 
-### Install necessary packages
+* And Install the necessary packages:
+    * The necessary packages can be estimated using these methods:
+        * The [petalinux dependencies script][plnx], and
+        * the [packages list spreadsheet][xlsx]
 
-Sources:
+---
 
-* Petalinux requirements [script][script].
-* Petalinux requirements [script][^script].
-* Petalinux requirements [script][script].
-* 
+# Part 2: Building [Petalinux]
 
 ---
 
 ## Referencies
 
-[^1]: [Petalinux download page](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) (*Xilinx*)
-
-[^1]: [Petalinux download page](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) (*Xilinx*)
-
-[script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
-
-[^script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
-
-[script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf) (*pdf*)  
-UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
-
----
-
-# Part 2: Building [Petalinux] ([Part 1: Installation](#part-1))
+  UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 
 ---
 
@@ -88,3 +74,6 @@ UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
 [ZC702]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html "ZC702 Evaluation Kit"
 [ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
+[plnx]: https://support.xilinx.com/s/article/73296 "Petalinux Dependencies Script"
+[xlsx]: https://support.xilinx.com/s/article/000035572 "Packages list (excel)"
+[Ubuntu]: https://ubuntu.com/download/alternative-downloads "Ubuntu LTS"
