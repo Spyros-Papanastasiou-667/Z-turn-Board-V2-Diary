@@ -77,13 +77,13 @@ Sources:
 UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 ---
 
+test [id2]
+
+---
+
 [id]: http://example.com/  "Optional Title Here"
 
-* [id]: http://example.com/  "Optional Title Here"
-
-> [id]: http://example.com/  "Optional Title Here"
-
-  [id]: http://example.com/  "Optional Title Here"
+[id2]: [test](http://example.com/)
 
 ---
 
