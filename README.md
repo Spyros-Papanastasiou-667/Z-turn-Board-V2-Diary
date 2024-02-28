@@ -27,6 +27,9 @@ I prefer a top-down approach.
     * Chapter 2: [PL&PS // asynced // polling](.site/projects/standalone/PL&PS.asynced/README.md)
     * Chapter 3: [PL&PS // asynced // interrupt](.site/projects/standalone/PL&PS.asynced.interrupt/README.md)
     * Chapter 4: [PL&PS // synced(AXI) // interrupt](.site/projects/standalone/PL&PS.synced/README.md)
+    * Chapter X: ~~[`BOOT.bin`@`QSPI`(SPI@Flash)](.site/projects/standalone/qspi/README.md)~~
+* #### 2: Linux:
+    * Chapter ?: [](.site/projects/linux/)
 * Goals:
     * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
     * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)
