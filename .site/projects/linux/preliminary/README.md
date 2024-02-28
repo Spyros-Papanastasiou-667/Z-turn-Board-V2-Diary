@@ -1,6 +1,6 @@
 # Hellow World // Preliminaries
 
-# Part1: Installation ([Part 2](# Test))
+# Part 1: Installation ([Part 2](#test))
 
 ## Installing `Petalinux` under unsupported OS. Skip if on supported(Ubuntu).
 
@@ -60,6 +60,6 @@ UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-
 
 # Test
 
-# Part2: Building [Petalinux]
+# Part 2: Building [Petalinux]
 
 ---
