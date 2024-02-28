@@ -58,7 +58,7 @@ umount -Rl "$DEST"/*
 
 ---
 
-# Part 2: Building [Petalinux]
+# Part 2: Building [Petalinux\]
 
 ---
 
