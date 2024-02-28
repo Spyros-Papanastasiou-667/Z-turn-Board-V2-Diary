@@ -46,14 +46,14 @@ umount -Rl "$DEST"/*
 
 Sources:
 
-* Petalinux requirements [script][1].
+* Petalinux requirements [script][^1].
 * 
 
 ---
 
 ## Referencies
 
-* [1]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
+* [^1]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf) (*pdf*)  
 UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 ---
