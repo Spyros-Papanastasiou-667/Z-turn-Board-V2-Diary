@@ -2,6 +2,12 @@
 
 # Part 1: Installation. ([Part 2: Building](#part-2))
 
+## Downloading
+
+Two things need to be downloaded from the download page[^1]:
+
+---
+
 ## Installing `Petalinux` under unsupported OS. (Skip if supported(Ubuntu)).
 
 [Current] Method: Chrooting [from our OS to Ubuntu].
@@ -55,12 +61,13 @@ Sources:
 
 ## Referencies
 
+[^1]: [Petalinux download page](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) (*Xilinx*)
+
 [script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
 
 [^script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
 
 [script]: [plnx-env-setup.sh](https://support.xilinx.com/s/article/73296?language=en_US) petalinux dependencies script (*site*)
-
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf) (*pdf*)  
 UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 ---
