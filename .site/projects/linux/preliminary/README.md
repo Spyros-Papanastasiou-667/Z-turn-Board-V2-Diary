@@ -1,8 +1,8 @@
 # Hellow World // Preliminaries
 
-# Part 1: Installation ([Part 2](#part-2))
+# Part 1: Installation. ([Part 2: Building](#part-2))
 
-## Installing `Petalinux` under unsupported OS. Skip if on supported(Ubuntu).
+## Installing `Petalinux` under unsupported OS. (Skip if supported(Ubuntu)).
 
 [Current] Method: Chrooting [from our OS to Ubuntu].
 
@@ -46,7 +46,7 @@ umount -Rl "$DEST"/*
 
 Sources:
 
-* Petalinux requirements script[^1].
+* Petalinux requirements [script][^1].
 * 
 
 ---
@@ -58,8 +58,6 @@ Sources:
 UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 ---
 
-# Test
-
-# Part 2: Building [Petalinux]
+# Part 2: Building [Petalinux] ([Part 1: Installation](#part-1))
 
 ---
