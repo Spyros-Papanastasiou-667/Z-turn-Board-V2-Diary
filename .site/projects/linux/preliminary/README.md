@@ -2,6 +2,11 @@
 
 # Part 1: Installation. ([Part 2: Building](#part-2))
 
+This is [an example] [id] reference-style link.
+
+This is [an example][id] reference-style link.
+
+
 ## Downloading
 
 Two things need to be downloaded from the download page[^1]:
@@ -71,6 +76,8 @@ Sources:
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf) (*pdf*)  
 UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 ---
+
+[id]: http://example.com/  "Optional Title Here"
 
 # Part 2: Building [Petalinux] ([Part 1: Installation](#part-1))
 
