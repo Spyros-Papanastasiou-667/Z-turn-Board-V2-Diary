@@ -85,21 +85,30 @@ umount -Rl "$DEST"/*
 
 ---
 
+# FIXME: Preemature: Zynq + Reset ?
+
+---
+
 # Part 2: Configuration & Building
 
 (From within `Ubuntu` (*chroot*)).  
 [Login as a normal user. E.g.: `$ su - my_username`\].
 
-* Run the installer: `$ ./petalinux-v2023.2-10121855-installer.run --dir petalinux/ --platform "arm"`
-    * Where:
+* Install:  
+  `$ ./petalinux-v2023.2-10121855-installer.run --dir petalinux/ --platform "arm"`  
+  Where:
     * `--dir`: Destination directory
-    * `--platform`: Limit to `Zynq 7000`
-* Source the "environment": `$ source petalinux/settings.sh`
-    * (This will ease access to commands of the form: `petalinux-*`)
-* Create a project: `$ petalinux-create --type project --source xilinx-zc702-v2023.2-10140544.bsp`
-* Enter: `$ cd xilinx-zc702-2023.2`
-* Import configuration: `$ petalinux-config --get-hw-description design_1_wrapper.xsa --silentconfig`
-* Build: `$ petalinux-build`
+    * `--platform`: Limits to `Zynq 7000`
+* "Environment":  
+  `$ source petalinux/settings.sh`  
+  (Opens access to commands like: `petalinux-*`)
+* Create:  
+  `$ petalinux-create --type project --source xilinx-zc702-v2023.2-10140544.bsp`  
+  `$ cd xilinx-zc702-2023.2`
+* Configure:  
+  `$ petalinux-config --get-hw-description design_1_wrapper.xsa --silentconfig`
+* Build:  
+  `$ petalinux-build`
 
 Images should be under `petalinux/xilinx-zc702-v2023.2/linux/?`
 
