@@ -1,6 +1,8 @@
 ## Blink all [possible].
 ## Phase 1 [Vivado]
 
+# FIXME: Create project with "Project is an extensible Vitis platform (?)"
+
 Accessible to the PL:
 
 * Buzzer

@@ -65,11 +65,23 @@ chroot . /bin/bash -l
 umount -Rl "$DEST"/*
 ```
 
-* And Install the necessary packages:
+* `$ source /etc/profile`
+* and Install the necessary packages:
     * The necessary packages can be estimated using these methods:
         * The [petalinux dependencies script][plnx], and
         * the [packages list spreadsheet][xlsx]
-* Also, fix the `/bin/sh` link to point to `/bin/bash` (`$ sudo dpkg-reconfigure dash` (?)).
+            * e.g.: `$ apt-get install iproute2 gawk python3 build-essential gcc git make net-tools libncurses5-dev tftpd zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget git-core diffstat chrpath socat xterm autoconf libtool tar unzip texinfo zlib1g-dev gcc-multilib automake screen pax gzip cpio python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint libtinfo5`
+* Fix `/bin/sh` to point to `/bin/bash`:  
+  `$ dpkg-reconfigure dash`
+
+---
+
+### Troubleshooting
+
+* *Locale* problem:
+    * Install: `$ apt install locales`
+    * reconfigure: `$ dpkg-reconfigure locales`  
+      Sest `en_US.UTF-8`
 
 ---
 
@@ -89,6 +101,23 @@ umount -Rl "$DEST"/*
 * Import configuration: `$ petalinux-config --get-hw-description design_1_wrapper.xsa --silentconfig`
 * Build: `$ petalinux-build`
 
+Images should be under `petalinux/xilinx-zc702-v2023.2/linux/?`
+
+---
+
+# FIXME: chagning xsa: mrproper + configure
+
+---
+
+#### ~~Extra: (cache)~~:
+
+~~You might want to keep [and transfer\] the downloaded files at `petalinux/xilinx-zc702-v2023.2/build/{downloa,ss?}` for future, different, configurations. DANGER~~
+
+#### Troubleshooting
+
+* Some fixed through reinstalling
+* Do not mix different Petalinux and BSP
+* [Petalinux 2023.2 known issues](https://support.xilinx.com/s/article/000035572) (*site*)
 ---
 
 ## Referencies
@@ -106,4 +135,4 @@ umount -Rl "$DEST"/*
 [ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
 [plnx]: https://support.xilinx.com/s/article/73296 "Petalinux Dependencies Script"
 [xlsx]: https://support.xilinx.com/s/article/000035572 "Packages list (excel)"
-[Ubuntu]: https://ubuntu.com/download/alternative-downloads "Ubuntu LTS"
+[Ubuntu]: https://ubuntu.com/download/server#downloads "Ubuntu LTS"
