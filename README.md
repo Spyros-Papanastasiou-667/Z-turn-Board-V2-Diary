@@ -29,7 +29,7 @@ I prefer a top-down approach.
     * Chapter 4: [PL&PS // synced(AXI) // interrupt](.site/projects/standalone/PL&PS.synced/README.md)
     * ~~Chapter X: [`BOOT.bin`@`QSPI`(SPI@Flash)](.site/projects/standalone/qspi/README.md)~~
 * #### 2: Linux:
-    * Chapter 0: [Preliminaries](.site/projects/linux/preliminary/README.md): Petalinux installation & building
+    * Chapter 0: [Preliminaries](.site/projects/linux/preliminary/README.md): Installation & building
     * Chapter 1: [Hellow World](.site/projects/linux/hellow_world/README.md)
 * Goals:
     * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)

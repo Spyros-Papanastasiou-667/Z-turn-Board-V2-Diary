@@ -1,9 +1,17 @@
 # Hellow World // Preliminaries
 
+# FIXME:
+
+* first: change xsa to support linux
+* optional: add caches
+* new platform without boot artifacts
+* tmplate zynq
+* ? remove debuging simbols
+
 # Phase 0: Preparing the PL(Logic design)
 
-As per [Petalinux Reference: Ch3: Configuring a Hardware Platform for Linux][reference], in order for our `.xsa` to be compatible with Linux, some requirements must be met: (unverified):  
-(You can [probably] just take the default Zynq IP, [onto your Block Design\]).  
+As per [Petalinux Reference: Ch3: Configuring a Hardware Platform for Linux][reference], in order for our `.xsa` to be compatible with Linux, some requirements must be met: TODO: minimal:  
+(You can [probably\] just use the default Zynq IP [configuration\]).
 
 * [unused\] TTC (Triple Timer Counter)
 * UART (UART1)
@@ -127,18 +135,19 @@ Images should be under `petalinux/xilinx-zc702-v2023.2/linux/?`
 * Some fixed through reinstalling
 * Do not mix different Petalinux and BSP
 * [Petalinux 2023.2 known issues](https://support.xilinx.com/s/article/000035572) (*site*)
+* https://support.xilinx.com/s/question/0D54U00006g117HSAQ/petalinux-error-when-building-device-tree-reference-to-nonexistent-node-or-label-psurcpugic?language=en_US
 ---
 
 ## Referencies
 
-* UG1144: [PetaLinux Tools Documentation: Reference Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf) (*pdf*)  
+* UG1144: [PetaLinux Tools Documentation: Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)  
   UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 
 ---
 
 <How can these be made visible?>
 
-[reference]: https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug1144-petalinux-tools-reference-guide.pdf "Petalinux Reference"
+[reference]: https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview "Petalinux Reference"
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
 [ZC702]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html "ZC702 Evaluation Kit"
 [ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
