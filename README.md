@@ -1,6 +1,6 @@
 ## Z-turn-Board-V2-Diary
 [Z-turn](https://www.myirtech.com/list.asp?id=708) is a [cheap] chinese board featuring a [Zynq](https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html) processor. ([Overview:pdf](https://www.myirtech.com/download/Zynq7000/Z-turnBoardV2.pdf)).  
-![](.site/images/preview.gif "Board blinking LEDs")  
+![](site/images/preview.gif "Board blinking LEDs")  
 (Zynqs incorporate both a PL and a PS unit).  
 (My board has Zynq7020 with a dual core Arm & 80K logic cells).  
 I'll try to keep this repo "Beginner Friendly"..  
@@ -11,20 +11,20 @@ I prefer a top-down approach.
 
 ### Goals: Gotta blink 'em all, Blinkemall!! 🧶🧶
 * #### 0: Preliminary:
-    * [Boot process](.site/Preliminary/Boot_process/README.md)
-    * [Adding the board](.site/Preliminary/Adding_the_board/README.md)
-    * [Advanced: Creating a custom module](.site/Preliminary/Module/README.md)
-    * [Peripherals: MIO](.site/Preliminary/Peripherals/README.md)
+    * [Boot process](site/Preliminary/Boot_process/README.md)
+    * [Adding the board](site/Preliminary/Adding_the_board/README.md)
+    * [Advanced: Creating a custom module](site/Preliminary/Module/README.md)
+    * [Peripherals: MIO](site/Preliminary/Peripherals/README.md)
 * #### 1: Standalone:
-    * Chapter 1: [PL](.site/projects/standalone/PL/README.md)
-    * Chapter 2: [PL&PS // asynced // polling](.site/projects/standalone/PL&PS.asynced/README.md)
-    * Chapter 3: [PL&PS // asynced // interrupt](.site/projects/standalone/PL&PS.asynced.interrupt/README.md)
-    * Chapter 4: [PL&PS // synced(AXI) // interrupt](.site/projects/standalone/PL&PS.synced/README.md)
-    * ~~Chapter X: [`BOOT.bin`@`QSPI`(SPI@Flash)](.site/projects/standalone/qspi/README.md)~~
+    * Chapter 1: [PL](site/projects/standalone/PL/README.md)
+    * Chapter 2: [PL&PS // asynced // polling](site/projects/standalone/PL&PS.asynced/README.md)
+    * Chapter 3: [PL&PS // asynced // interrupt](site/projects/standalone/PL&PS.asynced.interrupt/README.md)
+    * Chapter 4: [PL&PS // synced(AXI) // interrupt](site/projects/standalone/PL&PS.synced/README.md)
+    * ~~Chapter X: [`BOOT.bin`@`QSPI`(SPI@Flash)](site/projects/standalone/qspi/README.md)~~
 * #### 2: Linux:
-    * Chapter 0: [Preliminaries](.site/projects/linux/preliminary/README.md): Installation & building
-    * Chapter 1: [Hellow World](.site/projects/linux/hellow_world/README.md)
-    * Chapter 2: [PS(Gpio)](.site/projects/linux/gpio/README.md)
+    * Chapter 0: [Preliminaries](site/projects/linux/preliminary/README.md): Installation & building
+    * Chapter 1: [Hellow World](site/projects/linux/hellow_world/README.md)
+    * Chapter 2: [PS(Gpio)](site/projects/linux/gpio/README.md)
 * #### Goals:
     * DMA?
 
