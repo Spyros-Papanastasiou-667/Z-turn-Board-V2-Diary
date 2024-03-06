@@ -24,13 +24,9 @@ I prefer a top-down approach.
 * #### 2: Linux:
     * Chapter 0: [Preliminaries](.site/projects/linux/preliminary/README.md): Installation & building
     * Chapter 1: [Hellow World](.site/projects/linux/hellow_world/README.md)
-* Goals:
-    * #### 3: [PS & PL: Standalone: Independent units](.site/projects/PS_&_PL:_Standalone:_Independent_units/README.md)
-    * #### *: [PS & PL: Standalone: PS reads PL](.site/projects/PS_&_PL:_Standalone:_PS_reads_PL/README.md)
-    * #### *: [PS & PL: Standalone: PL reads PS](.site/projects/PS_&_PL:_Standalone:_PL_reads_PS/README.md)
-    * #### *: [PS & PL: Linux: Independent units](.site/projects/PS_&_PL:_Linux:_Independent_units/README.md)
-    * #### *: [PS & PL: Linux: PS Reads PL](.site/projects/PS_&_PL:_Linux:_PS_Reads_PL/README.md)
-    * #### *: [PS & PL: Linux: PL Reads PS](.site/projects/PS_&_PL:_Linux:_PL_Reads_PS/README.md)
+    * Chapter 2: [PS(Gpio)](.site/projects/linux/gpio/README.md)
+* #### Goals:
+    * DMA?
 
 ---
 

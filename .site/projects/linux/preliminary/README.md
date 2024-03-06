@@ -1,34 +1,10 @@
-# Vivado part
-
-* reset the Zynq module to the default configuration (just re-add it)  
-  fix the clock  
-  (fix (?) the warnings under "platform setup")  
-  <img1>
-  <img2>
-* add an AXI Interrupt Controller, between the Zynq(IRQ) and the GPIO(interrupt)  
-  enable interrupts  
-  <img3>
-* export `.xsa`
-
-
-# Petalinux part
-* create project
-* config project
-    * add [offline\] caches
-    * pay attention to project-spec/.bit. We'll need it later
-* build
-* package (include bitstream otherwise may be stuck at boot)
-    * Two cases  
-      images/linux/system.bit was not synchronized (only aftere build)  
-      project_spec/ is synchronized with (?) config
-
 # 🌷Linux(Preliminaries)
 
 Necessary steps for Linux in Zynq.
 
 ---
 
-## 0) [Ensuring\] Vivado [output(`.xsa`)\] compatibility
+## [Ensuring\] Vivado [output(`.xsa`)\] compatibility
 
 As per [reference], certain processor features must be enabled. Namely:
 
@@ -54,7 +30,7 @@ As per [reference], certain processor features must be enabled. Namely:
 
 ---
 
-## 0) Petalinux installation
+## Petalinux installation
 
 Two things need to be downloaded:
 
@@ -88,11 +64,13 @@ umount -Rl "$DEST"/*
 
 ### Inside the `chroot` jail 🏛️(Preparation):
 * `$ source /etc/profile`
-* Fix `/bin/sh` to point to `/bin/bash`: `$ dpkg-reconfigure dash`
+* Fix `/bin/sh` to point to `/bin/bash`:  
+  `$ dpkg-reconfigure dash`
 * Install the necessary packages, either through
     * the [petalinux dependencies script][plnx], or by consulting
     * the [packages list spreadsheet][xlsx]
-    * Example command: `$ apt-get install iproute2 gawk python3 build-essential gcc git make net-tools libncurses5-dev tftpd zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget git-core diffstat chrpath socat xterm autoconf libtool tar unzip texinfo zlib1g-dev gcc-multilib automake screen pax gzip cpio python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint libtinfo5`
+    * Example command:  
+      `$ apt-get install iproute2 gawk python3 build-essential gcc git make net-tools libncurses5-dev tftpd zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget git-core diffstat chrpath socat xterm autoconf libtool tar unzip texinfo zlib1g-dev gcc-multilib automake screen pax gzip cpio python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint libtinfo5`
 * (Ensure the proper locale(e.g.: en_US.UTF-8) is set: `$ locale`)
     * (`$ apt install locales`)
     * (`$ dpkg-reconfigure locales` and set a proper(UTF-8) one)
@@ -112,54 +90,73 @@ umount -Rl "$DEST"/*
 
 ### Inside the `chroot` jail 🏛️(Project configuration):
 
-* Create a new project [for our logic design\]: `$ petalinux-create --type project --source path/to/xilinx-zc702-v2023.2-10140544.bsp --template zynq --name my_project`  
+* Create a new project [for our logic design\]:  
+  `$ petalinux-create --type project --source path/to/xilinx-zc702-v2023.2-10140544.bsp --template zynq --name my_project`  
   (`--template` as a failsafe)
 * (`$ cd xilinx-zc702-2023.2`)
-* Configure according to the logic design: `$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa --silentconfig`
+* Configure according to the logic design:  
+  `$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa --silentconfig`
+
+---
+
+#### Extra 🏛️(Project configuration):
+In order to save download time, one can download the caches used. There are two of them, the "download" and the "sstate" one. Namely, under the [PetaLinux Tools sstate-cache Artifacts][petalinux], the following can be downloaded:
+
+* "arm sstate-cache", and
+* "Downloads"
+
+Extract both of them and copy the destination paths like so:
+
+* downloads_path: `file:///path/to/downloads/inner/downloads/folder`
+* sstate_path: `/path/to/sstate/top/arm/folder`
+
+When in "project configuration", replace the command with  
+`$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa`  
+As per the [reference], inside `menuconfig`, set the:
+
+* "Yocto-settings → Add pre-mirror URL" to downloads_path, and the
+* "Yocto Settings → Local sstate feeds settings" to sstate_path
+
+(exit, saving the configuration).
+
+![](images/downloads_sstate)
 
 ---
 
 ### Inside the `chroot` jail 🏛️(Project building):
 
-* Build the project, using: `$ petalinux-build`
-* boot imagees
+* Build the project, using:  
+  `$ petalinux-build`
+    * (Saving the `build/downloads` folder, might come in handy, when clearing this project, or opening a new one).
+* Prepare the boot images, including the bitstream, using:  
+  `$ petalinux-package --boot --u-boot --fpga images/linux/system.bit`
 
 ---
 
-# FIXME:
+### Booting
 
-* optional: add caches
-* new platform without boot artifacts
-* tmplate zynq
-* ~~? Reset output products and~~
-* ~~? remove debuging simbols~~
+As per [reference], in order to boot from SD card, the following must be copied/extracted (from `images/linux`):
 
----
-
-# FIXME: chagning xsa: mrproper + configure
+* Copying `BOOT.bin, boot.scr, image.ub` to `FAT32` partition of SD card
+* Extracting `rootfs.tar.gz` to `ext4` partition of SD card
 
 ---
 
-#### ~~Extra: (cache)~~:
+## Various troubleshooting from the internet:
 
-~~You might want to keep [and transfer\] the downloaded files at `petalinux/xilinx-zc702-v2023.2/build/{downloa,ss?}` for future, different, configurations. DANGER~~
-
-#### Troubleshooting
-
-* Some fixed through reinstalling
+* Some fixed through reinstalling petalinux
 * Do not mix different Petalinux and BSP
 * [Petalinux 2023.2 known issues](https://support.xilinx.com/s/article/000035572) (*site*)
-* https://support.xilinx.com/s/question/0D54U00006g117HSAQ/petalinux-error-when-building-device-tree-reference-to-nonexistent-node-or-label-psurcpugic?language=en_US
+
 ---
 
 ## Referencies
 
-* UG1144: [PetaLinux Tools Documentation: Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)  
-  UG1144: [Online version](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
+* UG1144: [PetaLinux Tools Documentation: Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 
 ---
 
-<How can these be made visible?>
+<!-- How can these [anchors\] be made visible? -->
 
 [reference]: https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview "Petalinux Reference"
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
