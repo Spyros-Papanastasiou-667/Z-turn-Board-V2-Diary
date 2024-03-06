@@ -24,8 +24,7 @@
 
 # 🌷Linux(Preliminaries)
 
-Description:
-> Necessary steps for Linux in Zynq
+Necessary steps for Linux in Zynq.
 
 ---
 
@@ -61,11 +60,69 @@ Two things need to be downloaded:
 
 * The [petalinux] installer, and
 * the [BSP][petalinux] (Board Support Package) (for the z-turn platform (i.e. for Zynq7000))
-    * The proper BSP(ZC702) can be chosen according the respective [ZC702] and [ZC706] pages
+    * The proper BSP (ZC702) can be chosen according the respective [ZC702] and [ZC706] pages
+
+(Going one step further), Supposing installation on unsupported OS(Gentoo):  
+One method is to `chroot` into a supported one: e.g.: [Ubuntu LTS][Ubuntu], thus regular installation, on a partition, is needed.  
+In order to chroot into it, I use the following script:  
+```bash
+#!/bin/bash
+DEST=/path/to/Ubuntu/mountpoint
+cd "$DEST"
+cp --dereference /etc/resolv.conf etc/
+for i in dev sys;
+do
+        mount --rbind /$i $i
+        mount --make-rslave $i
+done
+# mount --bind /var/tftp tftpboot
+# mount --make-rslave tftpboot
+mount -t tmpfs none tmp
+mount -t proc /proc proc
+# #### ######## #### #### ######## #### #
+chroot . /bin/bash -l                                                                                                                                                                                                                          
+umount -Rl "$DEST"/*
+```
 
 ---
 
-## 1) Boot image/filesystem [creation\]
+### Inside the `chroot` jail 🏛️(Preparation):
+* `$ source /etc/profile`
+* Fix `/bin/sh` to point to `/bin/bash`: `$ dpkg-reconfigure dash`
+* Install the necessary packages, either through
+    * the [petalinux dependencies script][plnx], or by consulting
+    * the [packages list spreadsheet][xlsx]
+    * Example command: `$ apt-get install iproute2 gawk python3 build-essential gcc git make net-tools libncurses5-dev tftpd zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget git-core diffstat chrpath socat xterm autoconf libtool tar unzip texinfo zlib1g-dev gcc-multilib automake screen pax gzip cpio python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint libtinfo5`
+* (Ensure the proper locale(e.g.: en_US.UTF-8) is set: `$ locale`)
+    * (`$ apt install locales`)
+    * (`$ dpkg-reconfigure locales` and set a proper(UTF-8) one)
+
+---
+
+### Inside the `chroot` jail 🏛️(Petalinux instalation):
+
+* Normal user: `$ su - my_username`
+* `$ ./petalinux-v2023.2-10121855-installer.run --dir path/to/dest/petalinux/ --platform "arm"`  
+  (limiting to `arm` may help (?) reduce the size)
+* (`$ cd petalinux`)
+* `$ source settings.sh`  
+  (opens access to commands like: `petalinux-*`)
+
+---
+
+### Inside the `chroot` jail 🏛️(Project configuration):
+
+* Create a new project [for our logic design\]: `$ petalinux-create --type project --source path/to/xilinx-zc702-v2023.2-10140544.bsp --template zynq --name my_project`  
+  (`--template` as a failsafe)
+* (`$ cd xilinx-zc702-2023.2`)
+* Configure according to the logic design: `$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa --silentconfig`
+
+---
+
+### Inside the `chroot` jail 🏛️(Project building):
+
+* Build the project, using: `$ petalinux-build`
+* boot imagees
 
 ---
 
@@ -76,106 +133,6 @@ Two things need to be downloaded:
 * tmplate zynq
 * ~~? Reset output products and~~
 * ~~? remove debuging simbols~~
-
----
-
-# Part 1: Installation
-
-## Downloading
-
-Two things need to be downloaded from the download page:
-
-* The [petalinux][petalinux] [installer], and
-* the [BSP][petalinux] (Board Support Package) (for the z-turn platform (i.e. for Zynq7000))
-    * The proper(ZC702) BSP can be chosen according the [respective] [ZC702][ZC702] and [ZC706][ZC706] pages
-
----
-
-## Installing on unsupported OS(Gentoo). (Skip if supported(Ubuntu)).
-
-[Current] **Method**: Chrooting [from our OS to Ubuntu]
-
-(Future **goal**: Building Petalinux on **Gentoo**)
-
-* **Install** [the supported version of] [**`Ubuntu`**][Ubuntu] (e.g.: version: LTS) on a partition.
-* **Chroot** onto it:
-
-Example script:
-
-```bash
-#!/bin/bash
-DEST=/mounted/Ubuntu
-cd "$DEST"
-cp --derference /etc/resolv.conf etc/
-for i in dev sys;
-do
-        mount --rbind /$i $i
-        mount --make-rslave $i
-done
-# mount --bind /var/tftp tftpboot
-# mount --make-rslave tftpboot
-mount -t tmpfs none tmp
-mount -t proc /proc proc
-# https://checkmk.com/linux-knowledge/calling-graphic-programs-chroot-environment
-#                                                                                                                                                                                                                                              
-# XDIR=/tmp/.X11-unix                                                                                                                                                                                                                            
-# if [[ -d $XDIR ]]                                                                                                                                                                                                                              
-# then                                                                                                                                                                                                                                           
-#         mkdir -p ./$XDIR                                                                                                                                                                                                                       
-#         mount --bind $XDIR ./$XDIR                                                                                                                                                                                                             
-#         xhost + local:                                                                                                                                                                                                                         
-# fi                                                                                                                                                                                                                                             
-# -                                                                                                                                                                                                                                            
-chroot . /bin/bash -l                                                                                                                                                                                                                          
-umount -Rl "$DEST"/*
-```
-
-* `$ source /etc/profile`
-* and Install the necessary packages:
-    * The necessary packages can be estimated using these methods:
-        * The [petalinux dependencies script][plnx], and
-        * the [packages list spreadsheet][xlsx]
-            * e.g.: `$ apt-get install iproute2 gawk python3 build-essential gcc git make net-tools libncurses5-dev tftpd zlib1g-dev libssl-dev flex bison libselinux1 gnupg wget git-core diffstat chrpath socat xterm autoconf libtool tar unzip texinfo zlib1g-dev gcc-multilib automake screen pax gzip cpio python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint libtinfo5`
-* Fix `/bin/sh` to point to `/bin/bash`:  
-  `$ dpkg-reconfigure dash`
-
----
-
-### Troubleshooting
-
-* *Locale* problem:
-    * Install: `$ apt install locales`
-    * reconfigure: `$ dpkg-reconfigure locales`  
-      Sest `en_US.UTF-8`
-
----
-
-# FIXME: Preemature: Zynq + Reset ?
-
----
-
-# Part 2: Configuration & Building
-
-(From within `Ubuntu` (*chroot*)).  
-[Login as a normal user. E.g.: `$ su - my_username`\].
-
-* Install:  
-  `$ ./petalinux-v2023.2-10121855-installer.run --dir petalinux/ --platform "arm"`  
-  Where:
-    * `--dir`: Destination directory
-    * `--platform`: Limits to `Zynq 7000`
-* "Environment":  
-  `$ source petalinux/settings.sh`  
-  (Opens access to commands like: `petalinux-*`)
-* Create:  
-  `$ petalinux-create --type project --source xilinx-zc702-v2023.2-10140544.bsp`  
-  `$ cd xilinx-zc702-2023.2`
-* Configure:  
-  `$ petalinux-config --get-hw-description design_1_wrapper.xsa --silentconfig`
-* Build:  
-  `$ petalinux-build`
-
-Images should be under `petalinux/xilinx-zc702-v2023.2/linux/?`
 
 ---
 
