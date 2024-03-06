@@ -1,24 +1,81 @@
-# Hellow World // Preliminaries
+# Vivado part
+
+* reset the Zynq module to the default configuration (just re-add it)  
+  fix the clock  
+  (fix (?) the warnings under "platform setup")  
+  <img1>
+  <img2>
+* add an AXI Interrupt Controller, between the Zynq(IRQ) and the GPIO(interrupt)  
+  enable interrupts  
+  <img3>
+* export `.xsa`
+
+
+# Petalinux part
+* create project
+* config project
+    * add [offline\] caches
+    * pay attention to project-spec/.bit. We'll need it later
+* build
+* package (include bitstream otherwise may be stuck at boot)
+    * Two cases  
+      images/linux/system.bit was not synchronized (only aftere build)  
+      project_spec/ is synchronized with (?) config
+
+# 🌷Linux(Preliminaries)
+
+Description:
+> Necessary steps for Linux in Zynq
+
+---
+
+## 0) [Ensuring\] Vivado [output(`.xsa`)\] compatibility
+
+As per [reference], certain processor features must be enabled. Namely:
+
+* "One Triple Timer Counter (TTC) (required)".
+* "External memory controller with at least 512 MB of memory (required)".
+* "UART for serial console (required)".
+* "Non-volatile memory, for example, QSPI flash and SD/MMC. This memory is optional, but only the JTAG boot can work".
+* "Ethernet (optional, essential for network access)".
+
+(Simply re-adding the "Zynq" component, should be sufficient).  
+(Re-export (including bitstream) afterwards).
+
+---
+
+### Example(Block Design):
+![](images/block_design "Block design with added components.")
+
+---
+
+### Example, minimalistic, block diagram:
+![](images/block_diagram "Block diagram")
+<!-- $ write_bd_layout -force -format svg -verbose /tmp/block_diagram.svg -->
+
+---
+
+## 0) Petalinux installation
+
+Two things need to be downloaded:
+
+* The [petalinux] installer, and
+* the [BSP][petalinux] (Board Support Package) (for the z-turn platform (i.e. for Zynq7000))
+    * The proper BSP(ZC702) can be chosen according the respective [ZC702] and [ZC706] pages
+
+---
+
+## 1) Boot image/filesystem [creation\]
+
+---
 
 # FIXME:
 
-* first: change xsa to support linux
 * optional: add caches
 * new platform without boot artifacts
 * tmplate zynq
-* ? remove debuging simbols
-
-# Phase 0: Preparing the PL(Logic design)
-
-As per [Petalinux Reference: Ch3: Configuring a Hardware Platform for Linux][reference], in order for our `.xsa` to be compatible with Linux, some requirements must be met: TODO: minimal:  
-(You can [probably\] just use the default Zynq IP [configuration\]).
-
-* [unused\] TTC (Triple Timer Counter)
-* UART (UART1)
-* QSPI
-* SD
-* DDR (?)
-* (Ethernet)
+* ~~? Reset output products and~~
+* ~~? remove debuging simbols~~
 
 ---
 
