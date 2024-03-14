@@ -117,7 +117,8 @@ As per the [reference], inside `menuconfig`, set the:
 * "Yocto-settings → Add pre-mirror URL" to downloads_path, and the
 * "Yocto Settings → Local sstate feeds settings" to sstate_path
 
-(exit, saving the configuration).
+(exit, saving the configuration).  
+Note: Absolute paths may be preferable.
 
 ![](images/downloads_sstate.jpg "Menuconfig")
 
