@@ -100,7 +100,7 @@ umount -Rl "$DEST"/*
 ---
 
 #### Extra 🏛️(Project configuration):
-In order to save download time, one can download the caches used. There are two of them, the "download" and the "sstate" one. Namely, under the [PetaLinux Tools sstate-cache Artifacts][petalinux], the following can be downloaded:
+In order to save **download time**, one can download the caches used. There are two of them, the "download" and the "sstate" one. Namely, under the [PetaLinux Tools sstate-cache Artifacts][petalinux], the following can be downloaded:
 
 * "arm sstate-cache", and
 * "Downloads"
@@ -128,7 +128,7 @@ Note: Absolute paths may be preferable.
 
 * Build the project, using:  
   `$ petalinux-build`
-    * (Saving the `build/downloads` folder, might come in handy, when clearing this project, or opening a new one).
+    * (Note: Save the `build/downloads` folder [after build\], in order to gain time when clearing a project, or opening a new one).
 * Prepare the boot images, including the bitstream, using:  
   `$ petalinux-package --boot --u-boot --fpga images/linux/system.bit`
 
