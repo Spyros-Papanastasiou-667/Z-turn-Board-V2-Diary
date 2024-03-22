@@ -24,29 +24,22 @@ As per [reference], certain processor features must be enabled. Namely:
 
 ---
 
-### Example, minimalistic, block diagram:
-![](images/block_diagram.svg "Block diagram")
-<!-- $ write_bd_layout -force -format svg -verbose /tmp/block_diagram.svg -->
-
----
-
 ## Petalinux installation
 
-Two things need to be downloaded:
+* Download the [petalinux] installer  
+  (Although there was a [BSP][bsp] (initial cconfiguration) for z-turn, it's quite old (2018 vs 2023)).
+* In order to install it, a [supported][Ubuntu] OS (Ubuntu) is required.
 
-* The [petalinux] installer, and
-* the [BSP][petalinux] (Board Support Package) (for the z-turn platform (i.e. for Zynq7000))
-    * The proper BSP (ZC702) can be chosen according the respective [ZC702] and [ZC706] pages
+### Unsupported OS(Gentoo)
 
-(Going one step further), Supposing installation on unsupported OS(Gentoo):  
-One method is to `chroot` into a supported one: e.g.: [Ubuntu LTS][Ubuntu], thus regular installation, on a partition, is needed.  
+One method is to `chroot` into a supported OS: e.g.: [Ubuntu LTS][Ubuntu], thus regular installation, on a partition, is needed.  
 In order to chroot into it, I use the following script:  
 ```bash
 #!/bin/bash
 DEST=/path/to/Ubuntu/mountpoint
 cd "$DEST"
 cp --dereference /etc/resolv.conf etc/
-for i in dev sys;
+for i in dev sys run;
 do
         mount --rbind /$i $i
         mount --make-rslave $i
@@ -57,12 +50,15 @@ mount -t tmpfs none tmp
 mount -t proc /proc proc
 # #### ######## #### #### ######## #### #
 chroot . /bin/bash -l                                                                                                                                                                                                                          
-umount -Rl "$DEST"/*
+umount -l *
 ```
 
 ---
 
 ### Inside the `chroot` jail 🏛️(Preparation):
+
+After chrooting:
+
 * `$ source /etc/profile`
 * Fix `/bin/sh` to point to `/bin/bash`:  
   `$ dpkg-reconfigure dash`
@@ -77,77 +73,24 @@ umount -Rl "$DEST"/*
 
 ---
 
-### Inside the `chroot` jail 🏛️(Petalinux instalation):
+## 🏛️(Petalinux instalation):
 
 * Normal user: `$ su - my_username`
 * `$ ./petalinux-v2023.2-10121855-installer.run --dir path/to/dest/petalinux/ --platform "arm"`  
-  (limiting to `arm` may help (?) reduce the size)
+  (limiting to `arm` may help reduce the size)
 * (`$ cd petalinux`)
 * `$ source settings.sh`  
   (opens access to commands like: `petalinux-*`)
 
 ---
 
-### Inside the `chroot` jail 🏛️(Project configuration):
-
-* Create a new project [for our logic design\]:  
-  `$ petalinux-create --type project --source path/to/xilinx-zc702-v2023.2-10140544.bsp --template zynq --name my_project`  
-  (`--template` as a failsafe)
-* (`$ cd xilinx-zc702-2023.2`)
-* Configure according to the logic design:  
-  `$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa --silentconfig`
-
----
-
-#### Extra 🏛️(Project configuration):
-In order to save **download time**, one can download the caches used. There are two of them, the "download" and the "sstate" one. Namely, under the [PetaLinux Tools sstate-cache Artifacts][petalinux], the following can be downloaded:
-
-* "arm sstate-cache", and
-* "Downloads"
-
-Extract both of them and copy the destination paths like so:
-
-* downloads_path: `file:///path/to/downloads/inner/downloads/folder`
-* sstate_path: `/path/to/sstate/top/arm/folder`
-
-When in "project configuration", replace the command with  
-`$ petalinux-config --get-hw-description path/to/exported/design_1_wrapper.xsa`  
-As per the [reference], inside `menuconfig`, set the:
-
-* "Yocto-settings → Add pre-mirror URL" to downloads_path, and the
-* "Yocto Settings → Local sstate feeds settings" to sstate_path
-
-(exit, saving the configuration).  
-Note: Absolute paths may be preferable.
-
-![](images/downloads_sstate.jpg "Menuconfig")
-
----
-
-### Inside the `chroot` jail 🏛️(Project building):
-
-* Build the project, using:  
-  `$ petalinux-build`
-    * (Note: Save the `build/downloads` folder [after build\], in order to gain time when clearing a project, or opening a new one).
-* Prepare the boot images, including the bitstream, using:  
-  `$ petalinux-package --boot --u-boot --fpga images/linux/system.bit`
-
----
-
-### Booting
-
-As per [reference], in order to boot from SD card, the following must be copied/extracted (from `images/linux`):
-
-* Copying `BOOT.bin, boot.scr, image.ub` to `FAT32` partition of SD card
-* Extracting `rootfs.tar.gz` to `ext4` partition of SD card
+## Next: [Creating a project](Project.md)
 
 ---
 
 ## Various troubleshooting from the internet:
 
-* Some fixed through reinstalling petalinux
 * Do not mix different Petalinux and BSP
-* [Petalinux 2023.2 known issues](https://support.xilinx.com/s/article/000035572) (*site*)
 
 ---
 
@@ -161,8 +104,7 @@ As per [reference], in order to boot from SD card, the following must be copied/
 
 [reference]: https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview "Petalinux Reference"
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
-[ZC702]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html "ZC702 Evaluation Kit"
-[ZC706]: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html "ZC706 Evaluation Kit"
+[bsp]: https://d.myirtech.com/Z-turn-board/
 [plnx]: https://support.xilinx.com/s/article/73296 "Petalinux Dependencies Script"
 [xlsx]: https://support.xilinx.com/s/article/000035572 "Packages list (excel)"
 [Ubuntu]: https://ubuntu.com/download/server#downloads "Ubuntu LTS"

@@ -27,7 +27,8 @@ I prefer a top-down approach.
       Next([Code](site/projects/standalone/PL&PS.synced/code.md))
     * ~~Chapter X: [`BOOT.bin`@`QSPI`(SPI@Flash)](site/projects/standalone/qspi/README.md)~~
 * #### 2: Linux:
-    * Chapter 0: [Preliminaries](site/projects/linux/preliminary/README.md): Installation & building
+    * Chapter 0: [Preliminaries](site/projects/linux/preliminary/README.md): Installation & building  
+      Next([Creating a project](site/projects/linux/preliminary/Project.md))
     * Chapter 1: [Hellow World](site/projects/linux/hellow_world/README.md)  
       Next([Code](site/projects/linux/hellow_world/Code.md))
     * ~~Chapter 2: [PS(Gpio)](site/projects/linux/gpio/README.md)~~
@@ -51,6 +52,7 @@ I prefer a top-down approach.
 
 * [Getting Started with the MYIR Z-turn](https://www.youtube.com/watch?v=fVrcUiYxe7M) (moved from ?? to FPGA Developer).
 * [Z-turn Board Tutorial Book](https://www.myirtech.com/soft.asp?id=969) (don't know how I found that)!
+* Original [source code](https://d.myirtech.com/Z-turn-board/)
 * unsure: https://www.youtube.com/watch?v=FujoiUMhRdQ
 * [schematic](https://www.myirtech.com/download/Zynq7000/zturnv2Schematic.pdf) (*pdf*)
 
@@ -59,6 +61,7 @@ I prefer a top-down approach.
 ### Extra: Tools used:
 * OS: Linux([Gentoo](https://www.gentoo.org/))
 * Markdown editor: [ReText](https://github.com/retext-project/retext)
+* Serial monitors: [picocom](https://github.com/npat-efault/picocom) and [CuteCom](https://gitlab.com/cutecom/cutecom)
 * [Vivado] Export [diagram] to `svg`: `$ write_bd_layout -force -format svg -verbose /tmp/design.svg`
 * Markdown [syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) (*github*)  
 Stack overflow [tricks](https://stackoverflow.com/editing-help) (*stack*)  
