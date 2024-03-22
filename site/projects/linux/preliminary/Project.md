@@ -117,9 +117,12 @@ Taken from the original [source code][source], we'll adapt the device tree speci
 FIXME: Why?
 
 * Prepare the boot images, including the bitstream, using:  
-  `$ petalinux-package --boot --u-boot --fpga images/linux/system.bit`  
+  `$ petalinux-package --boot --u-boot --fpga project-spec/hw-description/design_1_wrapper.bit`  
   ^ The important part is (`--fpga path/bit`) to include the bitstream.  
-  _ Amongst the errors, are inability to find the interrupt controller ([boot hang](https://support.xilinx.com/s/question/0D52E00006hpOdfSAE/axiintc-hangs-on-boot-testcase-on-zcu104?language=en_US)).
+  _ Amongst the errors, are inability to find the interrupt controller ([boot hang](https://support.xilinx.com/s/question/0D52E00006hpOdfSAE/axiintc-hangs-on-boot-testcase-on-zcu104?language=en_US)).  
+    Note:
+    * `project-spec/hw-description/design_1_wrapper.bit` is updated after `$ petalinux-config`, whereas
+    * `images/linux/system.bit` may not be updated
 * This will create the:
     * `BOOT.BIN`, `boot.scr`, `image.ub` files which contain the bootloader (?), the (?) [[reference]\] and the kernel, along with:
     * `rootfs.tar.gz`, which will be extracted onto the SD.
