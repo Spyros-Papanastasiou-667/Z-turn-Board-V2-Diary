@@ -1,11 +1,13 @@
 # Assuming [preliminaries](../preliminary/README.md)
-# Blinking through Linux
+
+# 🌷 Blinking through Linux 🌌
 
 ## Vivado part:
 
-* After adding the necessary parts to the `Zynq` component, check for various warnings under 'Platform Setup'
-* With respect to PL 2 PS interrupts, add an `AXI Interrupt Controller` between the GPIO_CLK interrupt the the Zynq_IRQ:
+* Check for various warnings under 'Platform Setup'
+* With respect to PL 2 PS interrupts, add an `AXI Interrupt Controller` between the GPIO_CLK interrupt and the Zynq_IRQ:
     * (Also set the interrupt controller's output, to "single"):
+* (Adding a [NOT](https://en.wikipedia.org/wiki/NOT_gate) gate clarifies **button**'s [active state](https://en.wikipedia.org/wiki/Logic_level#Active_state)).
 
 ![](images/block.diagram.svg "block diagram")
 
@@ -25,4 +27,4 @@ $ petalinux-package`), otherwise it may get [**stuck at boot**](#troubleshooting
   By not including the bitstream, apart from the PL not working(blinking), more parts, like the **interrupt controller**, may be inaccessible to the PS:  
   ([Linux\] Boot message): "[`irq-xilinx: /amba_pl@0/interrupt-controller@a0010000: num_irq=1, sw_irq=0, edge=0x0`](https://support.xilinx.com/s/question/0D52E00006hpOdfSAE/axiintc-hangs-on-boot-testcase-on-zcu104)"
 
-## Next: [Vitis: Hellow World](Code.md) under linux
+## Next: [Linux part](Code.md)

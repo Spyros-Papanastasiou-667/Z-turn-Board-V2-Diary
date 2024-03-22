@@ -30,7 +30,7 @@ I prefer a top-down approach.
     * Chapter 0: [Preliminaries](site/projects/linux/preliminary/README.md): Installation & building  
       Next([Creating a project](site/projects/linux/preliminary/Project.md))
     * Chapter 1: [Hellow World](site/projects/linux/hellow_world/README.md)  
-      Next([Code](site/projects/linux/hellow_world/Code.md))
+      Next([Linux part](site/projects/linux/hellow_world/Code.md))
     * ~~Chapter 2: [PS(Gpio)](site/projects/linux/gpio/README.md)~~
 * #### Goals:
     * DMA?
@@ -55,6 +55,7 @@ I prefer a top-down approach.
 * Original [source code](https://d.myirtech.com/Z-turn-board/)
 * unsure: https://www.youtube.com/watch?v=FujoiUMhRdQ
 * [schematic](https://www.myirtech.com/download/Zynq7000/zturnv2Schematic.pdf) (*pdf*)
+* [Device Tree Source](https://devicetree-specification.readthedocs.io/en/latest/chapter6-source-language.html) (`.dts?`) reference (*site*)
 
 ---
 
