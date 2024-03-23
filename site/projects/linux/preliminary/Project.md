@@ -129,6 +129,17 @@ FIXME: Why?
 
 ---
 
+## Note(corrections)
+
+As per the [tutorial]:
+
+* `boot.scr` is the script that U-Boot reads during boot time to load the kernel and rootfs
+* `image.ub` contains kernel image, device tree and rootfs
+
+Thus, up to the previous chapter, the `ext4` (where the `rootfs.tar.gz` was extracted) was not being used 🙊!
+
+---
+
 ## Boot:
 
 As per [reference]:
@@ -152,6 +163,7 @@ As per [reference]:
 
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
 * [The original\] [Source code](https://d.myirtech.com/Z-turn-board/) (*chinese site*)
+* [Add EXT4 rootfs support](https://docs.amd.com/r/en-US/Vitis-Tutorials-Vitis-Platform-Creation/Add-EXT4-rootfs-support) (*tutorial*)
 
 ---
 
@@ -161,3 +173,4 @@ As per [reference]:
 [bsp]: https://d.myirtech.com/Z-turn-board/
 [petalinux]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html "Petalinux installer"
 [source]: https://d.myirtech.com/Z-turn-board/
+[tutorial]: https://xilinx.github.io/Embedded-Design-Tutorials/docs/2023.1/build/html/docs/Introduction/Zynq7000-EDT/4-linux-for-zynq.html "Zynq-7000 Embedded Design Tutorial"

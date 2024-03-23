@@ -97,6 +97,7 @@ After chrooting:
 ## Referencies
 
 * UG1144: [PetaLinux Tools Documentation: Reference Guide](https://docs.xilinx.com/r/en-US/ug1144-petalinux-tools-reference-guide/Overview) (*site*)
+* [Device tree migration notes](https://docs.yoctoproject.org/next/migration-guides/migration-3.4.html) (*site*)
 
 ---
 
