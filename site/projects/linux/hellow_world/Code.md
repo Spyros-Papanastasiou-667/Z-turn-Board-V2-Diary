@@ -45,6 +45,9 @@ Also: No need for "boot artifacts":
 
 From this point on, the `hellow_world.elf` file can be [copied to, and\] run from any partition on the SD card.
 
+* (As usual, copy `BOOT.bin`, `boot.scr` and `image.ub` to `FAT32` partition, extract `rootfs.tar.gz` to `ext4`, and copy, for example onto `ext4`, the `hellow_world.elf`).
+* (The latter can be run like `$ ./hellow_world.elf`😎).
+
 ---
 
 ## Troubleshooting
