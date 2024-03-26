@@ -31,7 +31,8 @@ I prefer a top-down approach.
       Next([Creating a project](site/projects/linux/preliminary/Project.md))
     * Chapter 1: [Hellow World](site/projects/linux/hellow_world/README.md)  
       Next([Linux part](site/projects/linux/hellow_world/Code.md))
-    * ~~Chapter 2: [PS(Gpio)](site/projects/linux/gpio/README.md)~~
+    * Chapter 2: [Linux GPIO](site/projects/linux/gpio/README.md): LEDs w/ PL(CLK)  
+      Next: [PS(BUTTON) 2 PL](site/projects/linux/gpio/part2.md)
 * #### Goals:
     * DMA?
 
