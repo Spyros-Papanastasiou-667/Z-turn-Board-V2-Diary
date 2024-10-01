@@ -20,3 +20,57 @@ single interface was ok
 probably petalinux-build -x mrproper after new xsa
 
 probably 4 mb SD card w/ boot flag (at fat32)
+
+##############################################################################
+
+Zedboard + Zynq + Microblaze V
+
+Docs:
+* https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842424/Execute+Microblaze+Application+from+PS+DDR
+* https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841793/Utilizing+PS+memory+to+execute+Microblaze+application+on+Zynq+Ultrascale
+
+define FSBL_DEBUG_INFO manually (bug: Vitis: -DFSBL_DEBUG_INFO did not work)
+
+steps:
+block design:
+	* Zynq:
+		* S_GP0
+		* S_HP0
+		* EMIO size=1
+	* Microblaze V:
+		* Microcontroller (preset)
+		* (no interrupt)
+		* (no local memory (all will reside in DDR))
+		* DP/IP/DC/IC
+			* DC/IC @ HP
+			* DP/IP @ GP
+		* Discrete Ports
+		* sleep until FSLB finishes (i.e.: [microblaze] program loaded onto RAM)
+			* 01 @ reset_mode
+			* GPIO_O & microblaze(dbg_wakeup) @ wakeup
+	* Address map
+		* No GP0_DDR because Zynq/FSLB already has access to full DDR (i.e. from 0 to FF)
+		* yes GP0_QSPI because of error in vitis
+		* yes IOP
+		* HP0 above FSLB (above 30000), e.g.: 256MB from 0x1000_0000 to 0x1FFF_FFFF
+		* ουσιαστικά θα είναι 2 περιοχές: Data/Instruction για τον microblaze. φαντάζομαι αυτό δηλώνει microblaze πρόσβαση στο _
+
+Vitis:
+	* platform for microblaze (including FSBL)
+		* QSPI error: -DXPAR_XQSPIPS_0_QSPI_MODE=XQSPIPS_CONNECTION_MODE_SINGLE (check under block design / zynq)
+		* manual debug @ fsbl_debug.h : `#define FSBL_DEBUG_INFO`
+		* hook for wakeup @ FsblHookBeforeHandoff: (FsblHookFallback did not get called())
+			fsbl_printf(DEBUG_INFO, "Toggle GP0 \r\n");
+			Xil_Out32(0xE000A284, 0x1);
+			Xil_Out32(0xE000A048, 0x1);
+		* Info:
+			* lscript.ld configures memory regions (fsbl already has full access)
+			* settings/<processor> chooses peripherals! you can choose external uart (uartlite) (for either fsbl or the application)
+	* application for microblaze
+		* additional code:
+			#include "sleep.h"
+			usleep(100000);
+		* lscript.ld (memory regions)
+			* Base address @ start of HP
+			(size to 256MB)
+			* stack/heap e.g.: 6000/2000
