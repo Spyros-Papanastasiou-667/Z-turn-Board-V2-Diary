@@ -1,0 +1,22 @@
+petalinux should be installed through ubuntu. otherwise, menuconfig did not work
+open [zedboard] bsp and append langdale
+? change * to :append:.., :prepend:..
+maybe save build/sstate-cache too
+do not mix bsp ([no] 702 for zed), failure to see sd_card
+xsa did not reset config (neither kernel)
+add? build-essential (and? -dev)
+Vitis: delete libcrypto.so* if problems (like version OPENSSL_3.2.0 not found (required by /usr/lib64/libcryptsetup.so)
+
+
+dma-proxy:
+	ptusysClass = class_create(THIS_MODULE, CLASS_NAME);
+	-> ptusysClass = class_create(CLASS_NAME);
+
+dma-proxy: doc: For the AXI DMA IP the transmit channel is always 0 and
+ * the receive is always 1.
+dma-proxy w/ scatter gather (and interrupt controller [for Zynq])
+single interface was ok
+
+probably petalinux-build -x mrproper after new xsa
+
+probably 4 mb SD card w/ boot flag (at fat32)

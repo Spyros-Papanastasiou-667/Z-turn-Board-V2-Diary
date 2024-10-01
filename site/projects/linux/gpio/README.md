@@ -62,6 +62,19 @@ Thus, our PS(GPIO) pins are from 904 + 0 to 904 + 118.
 * ~~IMAGE_INSTALL_append = "kernel-devsrc"~~ vitis
 * merge downloads (w/ .done)
 * first-boot checklist
+* https://www.zachpfeffer.com/single-post/Execute-a-Script-at-Boot-Using-PetaLinux-Tools
+* https://support.xilinx.com/s/question/0D52E00006hpaIgSAI/getting-a-kernel-module-to-load-at-start-up?language=en_US
+
+DMA:
+
+* https://support.xilinx.com/s/question/0D52E00006hpc0zSAA/axi-dma-tutorialexample-with-zynq-running-linux?language=en_US
+* https://lauri.võsandi.com/hdl/zynq/xilinx-dma.html
+* simply by reading/writing to a memory mapped range from /dev/mem
+* Start the DMA channel (MM2S, S2MM or both) by writing 1 to control register
+* Write start/destination addresses
+* write transfer length(s)
+* a sanitized way of accessing the hardware from userspace applications via /dev/blah block devices
+* https://docs.xilinx.com/access/sources/framemaker/map?Doc_Version=7.1 English&url=pg021_axi_dma > **register addresses**
 
 troubleshooting
 
